@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel Vertical com Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            background-color: black;
+		    color: #95aed7;   
+        }
+
+        /* Botão de menu (Hambúrguer) */
+        .menu-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            z-index: 300;
+        }
+
+        .menu-btn div {
+            width: 25px;
+            height: 3px;
+            background-color: #95aed7;
+            transition: transform 1.3s;
+        }
+
+		/* Estilo do menu lateral */
+        .menu {
+		   position: fixed;
+		   top: 0;
+		   left: -250px; /* Escondido inicialmente */
+		   width: 250px;
+		   height: 100vh;
+		   background: rgba(34, 34, 34, 0.5); /* Transparente */
+		   padding: 20px;
+		   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+		   transition: left 0.3s;
+		   z-index: 200;
+		   overflow-y: auto; /* Permite rolagem dentro do menu */
+		   backdrop-filter: blur(10px); /* Efeito vidro */
+		   border-right: 1px solid rgba(255, 255, 255, 0.2); /* Borda suave */
+		}
+
+		/* Estilizar os links como os labels e destca slide atual */
+		.menu ul li a, 		
+		.menu ul li label {
+		    display: block;
+		    padding: 10px;
+		    color: #a1cca9;
+		    font-size: 18px;
+		    text-decoration: none;
+		    cursor: pointer;
+		    transition: transform 0.2s ease-in-out, background-color 0.3s;
+		    border-radius: 5px;
+		}
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu ul li {
+            margin: 20px 0;
+        }
+		
+        .menu ul li a:hover, 
+		.menu ul li label:hover {
+    		border: 2px solid #95aed7; /* Blue highlight */
+    		border-radius: 5px; /* Deixa as bordas arredondadas */            
+    		transform: scale(1.1);
+        }
+        
+		/* Estilização da header do menu */
+		.menu-header {
+		    display: flex;
+		    justify-content: space-between; /* Home à esquerda e X à direita */
+		    align-items: center; /* Centraliza verticalmente */
+		    padding: 15px;
+		    border-bottom: 1px solid grey; /* Linha separadora */
+		    margin-bottom: 15px; /* Espaço extra abaixo do cabeçalho */            
+            color: #95aed7;
+		}
+		
+		/* Container para o ícone Home */
+		.menu-icons {
+		    display: flex;
+		    align-items: center;
+		}
+		
+		/* Estilização do botão de fechar */
+		.close-menu {
+		    background: transparent;
+		    border: none;
+		    font-size: 20px;
+		    cursor: pointer;
+		}
+
+		
+		/* Efeito de scale ao passar o mouse + mudança de cor na moldura */
+		.close-menu:hover {
+		    transform: scale(1.1); /* Aumenta 20% o tamanho */
+		}
+
+        /* Classe para abrir o menu */
+        .menu.open {
+            left: 0;
+        }
+        
+		.menu ul li label.active {
+		    background-color: #95aed7; /* Blue highlight */
+		    color: #151819;
+		    transform: scale(1.1);
+		}
+        
+		
+        
+        /**/
+		/* Personalizar a barra de rolagem no WebKit (Chrome, Edge, Safari) */
+.menu::-webkit-scrollbar {
+    width: 5px; /* Largura inicial menor */
+    background: transparent;
+    transition: width 0.3s ease-in-out;
+}
+
+.menu::-webkit-scrollbar-thumb {
+    background: rgba(161, 204, 169, 0.5); /* Verde semi-transparente */
+    border-radius: 10px;
+    transition: width 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Quando o mouse passa sobre a barra de rolagem (thumb), aumenta a largura */
+.menu:hover::-webkit-scrollbar {
+    width: 8px; /* Aumenta a largura da barra quando o menu está em uso */
+}
+
+/* Quando o mouse passa sobre a própria barra (thumb), aumenta a opacidade */
+.menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(161, 204, 169, 0.9); /* Mais opaco ao passar o mouse */
+}
+
+
+        /* Carrossel */
+        .carousel {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slides {
+            width: 50vh;
+            height: 300vh;
+            transition: transform 0.4s ease-in-out;
+        }
+        
+        /* Quando a classe "no-transition" for adicionada, remove a animação */
+		.slides.no-transition {
+		    transition: none !important;
+		}
+
+        .slide {
+            width: 50vh;
+            height: 90vh;
+            margin: 5vh 0;
+            background-color: #151819;
+            border-radius: 4px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .semester {
+		    font-weight: bold;
+		    font-size: 18px;
+		    color: #a1cca9;
+		    padding: 10px 0;
+		    text-align: center;
+		    background: rgba(255, 255, 255, 0.1); /* Leve transparência */
+		}
+        
+        /* Estilo para a div .materia */
+		.materia {
+		    width: 100%;
+		    height: auto;
+		    text-align: center;
+		    background: rgba(255, 255, 255, 0.1); /* Leve transparência */
+		    padding: 5px;
+		    border-radius: 8px; /* Deixa a borda arredondada */
+		    transition: background 0.3s ease, color 0.3s ease; /* Suaviza as transições */
+		}
+		
+		/* Estilo quando o mouse passar sobre a div */
+		.materia:hover {
+		    cursor: pointer;
+		}
+		
+		/* Estilo do link interno */
+		.materia a {
+		    text-decoration: none; /* Remove sublinhado dos links */
+		    color: inherit; /* Usa a cor definida pela div */
+		    display: block; /* Faz o link preencher a div inteira */
+		}
+		
+		/* Estilo quando o mouse passar sobre a div */
+		.materia:hover a {
+		    color: #afc0cc; /* Muda a cor do texto no hover */
+		}
+
+
+        input[type="radio"] {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        /* Movimentação do carrossel */
+/* Padrão de movimentação para 50 cards no carrossel */
+#card1:checked ~ .slides { transform: translateY(100vh); }
+#card2:checked ~ .slides { transform: translateY(5vh); }
+#card3:checked ~ .slides { transform: translateY(-90vh); }
+#card4:checked ~ .slides { transform: translateY(-185vh); }
+#card5:checked ~ .slides { transform: translateY(-280vh); }
+#card6:checked ~ .slides { transform: translateY(-375vh); }
+#card7:checked ~ .slides { transform: translateY(-470vh); }
+#card8:checked ~ .slides { transform: translateY(-565vh); }
+#card9:checked ~ .slides { transform: translateY(-660vh); }
+#card10:checked ~ .slides { transform: translateY(-755vh); }
+#card11:checked ~ .slides { transform: translateY(-850vh); }
+#card12:checked ~ .slides { transform: translateY(-945vh); }
+#card13:checked ~ .slides { transform: translateY(-1040vh); }
+#card14:checked ~ .slides { transform: translateY(-1135vh); }
+#card15:checked ~ .slides { transform: translateY(-1230vh); }
+#card16:checked ~ .slides { transform: translateY(-1325vh); }
+#card17:checked ~ .slides { transform: translateY(-1420vh); }
+#card18:checked ~ .slides { transform: translateY(-1515vh); }
+#card19:checked ~ .slides { transform: translateY(-1610vh); }
+#card20:checked ~ .slides { transform: translateY(-1705vh); }
+#card21:checked ~ .slides { transform: translateY(-1800vh); }
+#card22:checked ~ .slides { transform: translateY(-1895vh); }
+#card23:checked ~ .slides { transform: translateY(-1990vh); }
+#card24:checked ~ .slides { transform: translateY(-2085vh); }
+#card25:checked ~ .slides { transform: translateY(-2180vh); }
+#card26:checked ~ .slides { transform: translateY(-2275vh); }
+#card27:checked ~ .slides { transform: translateY(-2370vh); }
+#card28:checked ~ .slides { transform: translateY(-2465vh); }
+#card29:checked ~ .slides { transform: translateY(-2560vh); }
+#card30:checked ~ .slides { transform: translateY(-2655vh); }
+#card31:checked ~ .slides { transform: translateY(-2750vh); }
+#card32:checked ~ .slides { transform: translateY(-2845vh); }
+#card33:checked ~ .slides { transform: translateY(-2940vh); }
+#card34:checked ~ .slides { transform: translateY(-3035vh); }
+#card35:checked ~ .slides { transform: translateY(-3130vh); }
+#card36:checked ~ .slides { transform: translateY(-3225vh); }
+#card37:checked ~ .slides { transform: translateY(-3320vh); }
+#card38:checked ~ .slides { transform: translateY(-3415vh); }
+#card39:checked ~ .slides { transform: translateY(-3510vh); }
+#card40:checked ~ .slides { transform: translateY(-3605vh); }
+#card41:checked ~ .slides { transform: translateY(-3700vh); }
+#card42:checked ~ .slides { transform: translateY(-3795vh); }
+#card43:checked ~ .slides { transform: translateY(-3890vh); }
+#card44:checked ~ .slides { transform: translateY(-3985vh); }
+#card45:checked ~ .slides { transform: translateY(-4080vh); }
+#card46:checked ~ .slides { transform: translateY(-4175vh); }
+#card47:checked ~ .slides { transform: translateY(-4270vh); }
+#card48:checked ~ .slides { transform: translateY(-4365vh); }
+#card49:checked ~ .slides { transform: translateY(-4460vh); }
+#card50:checked ~ .slides { transform: translateY(-4555vh); }
+
+
+    </style>
+</head>
+<body>
+
+<!-- Menu Lateral -->
+<nav class="menu">
+<div class="menu-header">
+    <!-- Ícone Home à esquerda -->
+    <div class="menu-icons">
+        <a href="https://www.facebook.com/?locale=pt_BR">
+            <svg aria-label="Página inicial" fill="#95aed7" height="24" role="img" viewBox="0 0 24 24" width="24">
+                <path d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Botão de fechar à direita -->
+    <button class="close-menu" onclick="toggleMenu()">✖</button>
+</div>
+
+
+
+<ul>
+    <li class="semester"> 1º SEMESTRE - Abr/24</li>
+    <li><label for="card1">☐ Arquitetura De Computadores</label></li>
+    <li><label for="card2">☐ Paradigmas De Linguagens De Programação Em Python</label></li>
+    <li><label for="card3">☐ Introdução À Segurança Da Informação</label></li>
+    <li><label for="card4">☐ Língua Portuguesa</label></li>
+    <li><label for="card5">☐ Pensamento Computacional</label></li>
+    <li><label for="card6">☐ Processos De Desenvolvimento De Software</label></li>
+
+    <li class="semester"> 2º SEMESTRE - Out/24</li>
+    <li><label for="card7">☐ Fundamentos De Redes De Computadores</label></li>
+    <li><label for="card8">☐ Sistemas De Informação E Sociedade</label></li>
+    <li><label for="card9">☐ Desenv. Web Em Html5, Css, Javascript E Php</label></li>
+    <li><label for="card10">☐ Introdução À Programação De Computadores</label></li>
+    <li><label for="card11">☐ Requisitos De Sistemas</label></li>
+
+    <li class="semester"> 3º SEMESTRE - Abr/25</li>
+    <li><label for="card12">☐ Arquitetura De Sistemas</label></li>
+    <li><label for="card13">☐ Engenharia De Usabilidade</label></li>
+    <li><label for="card14">☐ Estrutura De Dados</label></li>
+    <li><label for="card15">☐ Programação De Software Básico Em C</label></li>
+    <li><label for="card16">☐ Programação Orientada A Objetos Em Java</label></li>
+    <li><label for="card17">☐ Matemática E Lógica</label></li>
+
+    <li class="semester"> 4º SEMESTRE - Out/25</li>
+    <li><label for="card18">☐ Comportamento Organizacional</label></li>
+    <li><label for="card19">☐ Gerência De Configuração</label></li>
+    <li><label for="card20">☐ Indicadores De Desempenho De Ti</label></li>
+    <li><label for="card21">☐ Modelagem De Sistemas Em Uml</label></li>
+    <li><label for="card22">☐ Pensamento Computacional</label></li>
+    <li><label for="card23">☐ Computação Em Nuvem</label></li>
+
+    <li class="semester"> 5º SEMESTRE - Abr/26</li>
+    <li><label for="card24">☐ Desenvolvimento Rápido De Aplicações Em Python</label></li>
+    <li><label for="card25">☐ Desenvolvimento Web Full Mvc</label></li>
+    <li><label for="card26">☐ Engenharia De Produto</label></li>
+    <li><label for="card27">☐ Padrões De Projetos De Software Com Java</label></li>
+    <li><label for="card28">☐ Sistemas Operacionais</label></li>
+    <li><label for="card29">☐ Tópicos De Big Data Em Python</label></li>
+
+    <li class="semester"> 6º SEMESTRE - Out/26</li>
+    <li><label for="card30">☐ Aplic. De Cloud, Iot E Indústria 4.0 Em Python</label></li>
+    <li><label for="card31">☐ Métodos Ágeis Com Scrum</label></li>
+    <li><label for="card32">☐ Modelagem De Processos</label></li>
+    <li><label for="card33">☐ Programação Em Python Para Análise De Dados</label></li>
+    <li><label for="card34">☐ Programação Para Dispositivos Móveis Em Android</label></li>
+    <li><label for="card35">☐ Banco De Dados</label></li>
+
+    <li class="semester"> 7º SEMESTRE - Abr/27</li>
+    <li><label for="card36">☐ Algoritmos E Complexidade</label></li>
+    <li><label for="card37">☐ Banco De Dados Nosql</label></li>
+    <li><label for="card38">☐ Desenvolvimento De Back-end</label></li>
+    <li><label for="card39">☐ Direito Cibernético</label></li>
+    <li><label for="card40">☐ Métodos Quantitativos</label></li>
+    <li><label for="card41">☐ Qualidade E Testes De Software</label></li>
+
+    <li class="semester"> 8º SEMESTRE - Out/27</li>
+    <li><label for="card42">☐ Desenvolvimento De Front-end</label></li>
+    <li><label for="card43">☐ Desenvolvimento De Software Seguro</label></li>
+    <li><label for="card44">☐ Desenvolvimento E Operações (Devops)</label></li>
+    <li><label for="card45">☐ Direitos Humanos</label></li>
+    <li><label for="card46">☐ Educação Ambiental</label></li>
+    <li><label for="card47">☐ Gerenciamento De Projetos</label></li>
+    <li><label for="card48">☐ Linhas De Produtos De Software</label></li>
+    <li><label for="card49">☐ História Dos Povos Indígenas E Afrodescendentes</label></li>
+    <li><label for="card50">☐ Tópicos Em Libras: Surdez E Inclusão</label></li>
+</ul>
+
+
+
+	</nav>
+	
+	<!-- Botão de Menu (Hambúrguer) -->
+	<div class="menu-btn" onclick="toggleMenu()">
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	</div>
+
+    <div class="carousel">
+<!-- 50 inputs para o carrossel -->
+<input type="radio" name="carousel" id="card1" checked tabindex="0">
+<input type="radio" name="carousel" id="card2" tabindex="0">
+<input type="radio" name="carousel" id="card3" tabindex="0">
+<input type="radio" name="carousel" id="card4" tabindex="0">
+<input type="radio" name="carousel" id="card5" tabindex="0">
+<input type="radio" name="carousel" id="card6" tabindex="0">
+<input type="radio" name="carousel" id="card7" tabindex="0">
+<input type="radio" name="carousel" id="card8" tabindex="0">
+<input type="radio" name="carousel" id="card9" tabindex="0">
+<input type="radio" name="carousel" id="card10" tabindex="0">
+<input type="radio" name="carousel" id="card11" tabindex="0">
+<input type="radio" name="carousel" id="card12" tabindex="0">
+<input type="radio" name="carousel" id="card13" tabindex="0">
+<input type="radio" name="carousel" id="card14" tabindex="0">
+<input type="radio" name="carousel" id="card15" tabindex="0">
+<input type="radio" name="carousel" id="card16" tabindex="0">
+<input type="radio" name="carousel" id="card17" tabindex="0">
+<input type="radio" name="carousel" id="card18" tabindex="0">
+<input type="radio" name="carousel" id="card19" tabindex="0">
+<input type="radio" name="carousel" id="card20" tabindex="0">
+<input type="radio" name="carousel" id="card21" tabindex="0">
+<input type="radio" name="carousel" id="card22" tabindex="0">
+<input type="radio" name="carousel" id="card23" tabindex="0">
+<input type="radio" name="carousel" id="card24" tabindex="0">
+<input type="radio" name="carousel" id="card25" tabindex="0">
+<input type="radio" name="carousel" id="card26" tabindex="0">
+<input type="radio" name="carousel" id="card27" tabindex="0">
+<input type="radio" name="carousel" id="card28" tabindex="0">
+<input type="radio" name="carousel" id="card29" tabindex="0">
+<input type="radio" name="carousel" id="card30" tabindex="0">
+<input type="radio" name="carousel" id="card31" tabindex="0">
+<input type="radio" name="carousel" id="card32" tabindex="0">
+<input type="radio" name="carousel" id="card33" tabindex="0">
+<input type="radio" name="carousel" id="card34" tabindex="0">
+<input type="radio" name="carousel" id="card35" tabindex="0">
+<input type="radio" name="carousel" id="card36" tabindex="0">
+<input type="radio" name="carousel" id="card37" tabindex="0">
+<input type="radio" name="carousel" id="card38" tabindex="0">
+<input type="radio" name="carousel" id="card39" tabindex="0">
+<input type="radio" name="carousel" id="card40" tabindex="0">
+<input type="radio" name="carousel" id="card41" tabindex="0">
+<input type="radio" name="carousel" id="card42" tabindex="0">
+<input type="radio" name="carousel" id="card43" tabindex="0">
+<input type="radio" name="carousel" id="card44" tabindex="0">
+<input type="radio" name="carousel" id="card45" tabindex="0">
+<input type="radio" name="carousel" id="card46" tabindex="0">
+<input type="radio" name="carousel" id="card47" tabindex="0">
+<input type="radio" name="carousel" id="card48" tabindex="0">
+<input type="radio" name="carousel" id="card49" tabindex="0">
+<input type="radio" name="carousel" id="card50" tabindex="0">
+
+        
+	<div class="slides">
+    <!-- 1º SEMESTRE - Abr/24 -->
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/arquitetura">
+            <p>1º SEMESTRE - Abr/24</p>
+            <h2>Arquitetura De Computadores</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/paradigmas-python">
+            <p>1º SEMESTRE - Abr/24</p>
+            <h2>Paradigmas De Linguagens De Programação Em Python</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/seguranca-informacao">
+            <p>1º SEMESTRE - Abr/24</p>
+            <h2>Introdução À Segurança Da Informação</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/lingua-portuguesa">
+            <p>1º SEMESTRE - Abr/24</p>
+            <h2>Língua Portuguesa</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/pensamento-computacional">
+            <p>1º SEMESTRE - Abr/24</p>
+            <h2>Pensamento Computacional</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/desenvolvimento-software">
+            <p>1º SEMESTRE - Abr/24</p>
+            <h2>Processos De Desenvolvimento De Software</h2>
+        </a>
+    </div>
+</div>
+
+
+    <!-- 2º SEMESTRE - Out/24 -->
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/redes">
+            <p>2º SEMESTRE - Out/24</p>
+            <h2>Fundamentos De Redes De Computadores</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/sistemas-sociedade">
+            <p>2º SEMESTRE - Out/24</p>
+            <h2>Sistemas De Informação E Sociedade</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/web-development">
+            <p>2º SEMESTRE - Out/24</p>
+            <h2>Desenv. Web Em HTML5, CSS, JavaScript E PHP</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/programacao">
+            <p>2º SEMESTRE - Out/24</p>
+            <h2>Introdução À Programação De Computadores</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/requisitos-sistemas">
+            <p>2º SEMESTRE - Out/24</p>
+            <h2>Requisitos De Sistemas</h2>
+        </a>
+    </div>
+</div>
+
+
+    <!-- 3º SEMESTRE - Abr/25 -->
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/arquitetura-sistemas">
+            <p>3º SEMESTRE - Abr/25</p>
+            <h2>Arquitetura De Sistemas</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/usabilidade">
+            <p>3º SEMESTRE - Abr/25</p>
+            <h2>Engenharia De Usabilidade</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/estrutura-dados">
+            <p>3º SEMESTRE - Abr/25</p>
+            <h2>Estrutura De Dados</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/software-basico">
+            <p>3º SEMESTRE - Abr/25</p>
+            <h2>Programação De Software Básico Em C</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/poo-java">
+            <p>3º SEMESTRE - Abr/25</p>
+            <h2>Programação Orientada A Objetos Em Java</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/matematica-logica">
+            <p>3º SEMESTRE - Abr/25</p>
+            <h2>Matemática E Lógica</h2>
+        </a>
+    </div>
+</div>
+
+
+    <!-- 4º SEMESTRE - Out/25 -->
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/comportamento-organizacional">
+            <p>4º SEMESTRE - Out/25</p>
+            <h2>Comportamento Organizacional</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/gerencia-configuracao">
+            <p>4º SEMESTRE - Out/25</p>
+            <h2>Gerência De Configuração</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/indicadores-ti">
+            <p>4º SEMESTRE - Out/25</p>
+            <h2>Indicadores De Desempenho De Ti</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/modelagem-uml">
+            <p>4º SEMESTRE - Out/25</p>
+            <h2>Modelagem De Sistemas Em UML</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/pensamento-computacional">
+            <p>4º SEMESTRE - Out/25</p>
+            <h2>Pensamento Computacional</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/computacao-nuvem">
+            <p>4º SEMESTRE - Out/25</p>
+            <h2>Computação Em Nuvem</h2>
+        </a>
+    </div>
+</div>
+
+
+    <!-- 5º SEMESTRE - Abr/26 -->
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/dev-rapido-python">
+            <p>5º SEMESTRE - Abr/26</p>
+            <h2>Desenvolvimento Rápido De Aplicações Em Python</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/web-full-mvc">
+            <p>5º SEMESTRE - Abr/26</p>
+            <h2>Desenvolvimento Web Full MVC</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/engenharia-produto">
+            <p>5º SEMESTRE - Abr/26</p>
+            <h2>Engenharia De Produto</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/padroes-projetos-java">
+            <p>5º SEMESTRE - Abr/26</p>
+            <h2>Padrões De Projetos De Software Com Java</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/sistemas-operacionais">
+            <p>5º SEMESTRE - Abr/26</p>
+            <h2>Sistemas Operacionais</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/big-data-python">
+            <p>5º SEMESTRE - Abr/26</p>
+            <h2>Tópicos De Big Data Em Python</h2>
+        </a>
+    </div>
+</div>
+
+
+    <!-- 6º SEMESTRE - Out/26 -->
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/cloud-iot">
+            <p>6º SEMESTRE - Out/26</p>
+            <h2>Aplic. De Cloud, IoT E Indústria 4.0 Em Python</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/metodos-ageis">
+            <p>6º SEMESTRE - Out/26</p>
+            <h2>Métodos Ágeis Com Scrum</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/modelagem-processos">
+            <p>6º SEMESTRE - Out/26</p>
+            <h2>Modelagem De Processos</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/python-analise-dados">
+            <p>6º SEMESTRE - Out/26</p>
+            <h2>Programação Em Python Para Análise De Dados</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/android-development">
+            <p>6º SEMESTRE - Out/26</p>
+            <h2>Programação Para Dispositivos Móveis Em Android</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/banco-de-dados">
+            <p>6º SEMESTRE - Out/26</p>
+            <h2>Banco De Dados</h2>
+        </a>
+    </div>
+</div>
+
+    <!-- 7º SEMESTRE - Abr/27 -->
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/algoritmos-complexidade">
+            <p>7º SEMESTRE - Abr/27</p>
+            <h2>Algoritmos E Complexidade</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/banco-dados-nosql">
+            <p>7º SEMESTRE - Abr/27</p>
+            <h2>Banco De Dados NoSQL</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/backend-development">
+            <p>7º SEMESTRE - Abr/27</p>
+            <h2>Desenvolvimento De Back-end</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/direito-cibernetico">
+            <p>7º SEMESTRE - Abr/27</p>
+            <h2>Direito Cibernético</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/metodos-quantitativos">
+            <p>7º SEMESTRE - Abr/27</p>
+            <h2>Métodos Quantitativos</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/qualidade-testes">
+            <p>7º SEMESTRE - Abr/27</p>
+            <h2>Qualidade E Testes De Software</h2>
+        </a>
+    </div>
+</div>
+
+
+    <!-- 8º SEMESTRE - Out/27 -->
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/frontend-development">
+            <p>8º SEMESTRE - Out/27</p>
+            <h2>Desenvolvimento De Front-end</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/software-seguro">
+            <p>8º SEMESTRE - Out/27</p>
+            <h2>Desenvolvimento De Software Seguro</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/devops">
+            <p>8º SEMESTRE - Out/27</p>
+            <h2>Desenvolvimento E Operações (DevOps)</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/direitos-humanos">
+            <p>8º SEMESTRE - Out/27</p>
+            <h2>Direitos Humanos</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/educacao-ambiental">
+            <p>8º SEMESTRE - Out/27</p>
+            <h2>Educação Ambiental</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/gerenciamento-projetos">
+            <p>8º SEMESTRE - Out/27</p>
+            <h2>Gerenciamento De Projetos</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/linhas-produtos">
+            <p>8º SEMESTRE - Out/27</p>
+            <h2>Linhas De Produtos De Software</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/historia-afrodescendentes">
+            <p>8º SEMESTRE - Out/27</p>
+            <h2>História Dos Povos Indígenas E Afrodescendentes</h2>
+        </a>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="materia">
+        <a href="https://www.example.com/libras-inclusao">
+            <p>8º SEMESTRE - Out/27</p>
+            <h2>Tópicos Em Libras: Surdez E Inclusão</h2>
+        </a>
+    </div>
+</div>
+
+</div>
+
+    
+</div>
+
+    <script>
+let startY;
+let isScrolling = false;
+
+// Function to update active menu item
+function updateActiveMenu() {
+    let slides = document.querySelectorAll('input[name="carousel"]');
+    let labels = document.querySelectorAll(".menu ul li label");
+
+    slides.forEach(slide => {
+        if (slide.checked) {
+            labels.forEach(label => label.classList.remove("active")); // Remove active from all labels
+            let activeLabel = document.querySelector(`.menu ul li label[for="${slide.id}"]`);
+            if (activeLabel) {
+                activeLabel.classList.add("active");
+            }
+        }
+    });
+}
+
+// Toggle menu visibility
+function toggleMenu() {
+    let menu = document.querySelector(".menu");
+    let menuBtn = document.querySelector(".menu-btn");
+
+    menu.classList.toggle("open");
+
+    if (menu.classList.contains("open")) {
+        menuBtn.style.display = "none"; // Esconder botão do menu quando o menu estiver aberto
+        disableBodyScroll();
+    } else {
+        menuBtn.style.display = "flex"; // Mostrar botão do menu quando o menu estiver fechado
+        enableBodyScroll();
+    }
+}
+
+// Prevent background scrolling when the menu is open
+function disableBodyScroll() {
+    document.body.style.overflow = "hidden";
+}
+
+// Allow background scrolling when the menu is closed
+function enableBodyScroll() {
+    document.body.style.overflow = "auto";
+}
+
+// Prevent menu from propagating scroll events
+function stopScrollPropagation(event) {
+    event.stopPropagation();
+}
+
+// Função para navegar para um slide sem animação
+function scrollToCard(index) {
+    let slides = document.querySelector(".slides");
+    let slideInput = document.getElementById("card" + (index + 1));
+
+    if (slideInput) {
+        slides.classList.add("no-transition"); // Remove a animação
+
+        // Fecha o menu ANTES de mudar o slide
+        toggleMenu();
+
+        slideInput.checked = true; // Seleciona o slide correspondente
+
+        setTimeout(() => {
+            slides.classList.remove("no-transition"); // Restaura a animação após 50ms
+            updateActiveMenu(); // Atualiza o destaque do menu
+        }, 50);
+    }
+}
+
+// Aplica a função nos itens do menu
+document.querySelectorAll(".menu ul li label").forEach((label, index) => {
+    label.addEventListener("click", () => scrollToCard(index));
+});
+
+
+// Attach event listeners to each slide input (radio buttons)
+document.querySelectorAll('input[name="carousel"]').forEach(input => {
+    input.addEventListener("change", updateActiveMenu);
+});
+
+// Attach event listeners to menu labels
+document.querySelectorAll(".menu ul li label").forEach((label, index) => {
+    label.addEventListener("click", () => scrollToCard(index));
+});
+
+// Handle scrolling (mouse wheel) for slide change
+document.addEventListener("wheel", function(event) {
+    let menu = document.querySelector(".menu");
+    if (menu.classList.contains("open")) return; // Don't scroll carousel when menu is open
+
+    if (isScrolling) return;
+    isScrolling = true;
+    event.preventDefault();
+
+    let slides = document.querySelectorAll('input[name="carousel"]');
+    let checkedIndex = [...slides].findIndex(slide => slide.checked);
+
+    if (event.deltaY > 0 && checkedIndex < slides.length - 1) {
+        slides[checkedIndex + 1].checked = true;
+    } else if (event.deltaY < 0 && checkedIndex > 0) {
+        slides[checkedIndex - 1].checked = true;
+    }
+
+    updateActiveMenu();
+    setTimeout(() => isScrolling = false, 400);
+}, { passive: false });
+
+// Handle touch swipe for slide change
+document.addEventListener("touchstart", function(event) {
+    let menu = document.querySelector(".menu");
+    if (menu.classList.contains("open")) return; // Ignore swipe when menu is open
+    startY = event.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener("touchend", function(event) {
+    let menu = document.querySelector(".menu");
+    if (menu.classList.contains("open")) return; // Ignore swipe when menu is open
+
+    let endY = event.changedTouches[0].clientY;
+    let slides = document.querySelectorAll('input[name="carousel"]');
+    let checkedIndex = [...slides].findIndex(slide => slide.checked);
+    let swipeThreshold = 50;
+
+    if (startY - endY > swipeThreshold && checkedIndex < slides.length - 1) {
+        slides[checkedIndex + 1].checked = true;
+    } else if (endY - startY > swipeThreshold && checkedIndex > 0) {
+        slides[checkedIndex - 1].checked = true;
+    }
+
+    updateActiveMenu();
+}, { passive: true });
+
+
+// Função para navegar para um slide sem animação
+function scrollToCard(index) {
+    let slides = document.querySelector(".slides");
+    let slideInput = document.getElementById("card" + (index + 1));
+
+    if (slideInput) {
+        slides.classList.add("no-transition"); // Remove a animação
+
+        // Fecha o menu ANTES de mudar o slide
+        toggleMenu();
+
+        slideInput.checked = true; // Seleciona o slide correspondente
+
+        setTimeout(() => {
+            slides.classList.remove("no-transition"); // Restaura a animação após 50ms
+            updateActiveMenu(); // Atualiza o destaque do menu
+        }, 50);
+    }
+}
+
+// Aplica a função nos itens do menu
+document.querySelectorAll(".menu ul li label").forEach((label, index) => {
+    label.addEventListener("click", () => scrollToCard(index));
+});
+
+
+
+// Initialize menu highlight on page load
+document.addEventListener("DOMContentLoaded", updateActiveMenu);
+
+
+// Força o foco na página para capturar eventos de tecla
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.setAttribute("tabindex", "0");
+    document.body.focus();
+});
+
+// Permitir navegação pelos slides com as setas do teclado
+document.addEventListener("keydown", function(event) {
+    let slides = document.querySelectorAll('input[name="carousel"]');
+    let checkedIndex = [...slides].findIndex(slide => slide.checked);
+
+    if (event.key === "ArrowDown" && checkedIndex < slides.length - 1) {
+        slides[checkedIndex + 1].checked = true;
+    } else if (event.key === "ArrowUp" && checkedIndex > 0) {
+        slides[checkedIndex - 1].checked = true;
+    }
+
+    updateActiveMenu(); // Atualizar o menu quando trocar de slide
+});
+
+
+        
+    </script>
+
+</body>
+</html>
