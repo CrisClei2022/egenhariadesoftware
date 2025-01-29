@@ -1075,7 +1075,62 @@ document.addEventListener("keydown", function(event) {
     updateActiveMenu(); // Atualizar o menu quando trocar de slide
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.querySelector(".menu-btn");
+        const menu = document.querySelector(".menu");
+        const cards = document.querySelectorAll(".slide"); // Seleciona os cards
 
+        let menuVisible = false;
+        let menuBtnVisible = false;
+
+        // Alterna a visibilidade do menu
+        function toggleMenu() {
+            if (menuVisible) {
+                menu.classList.remove("open");
+            } else {
+                menu.classList.add("open");
+            }
+            menuVisible = !menuVisible;
+        }
+
+        // Exibir/esconder o botão de menu
+        function toggleMenuButton(show) {
+            if (show) {
+                menuBtn.style.display = "flex";
+                menuBtnVisible = true;
+            } else {
+                menuBtn.style.display = "none";
+                menuBtnVisible = false;
+            }
+        }
+
+        // Evento de clique no botão de menu
+        menuBtn.addEventListener("click", function (event) {
+            event.stopPropagation(); // Evita que o clique no botão de menu também dispare o evento no card
+            toggleMenu();
+        });
+
+        // Evento de clique nos cards
+        cards.forEach(card => {
+            card.addEventListener("click", function () {
+                if (menuVisible) {
+                    // Se o menu estiver aberto, fecha o menu
+                    toggleMenu();
+                } else {
+                    if (menuBtnVisible) {
+                        // Se o botão de menu já estiver aparecendo, ocultá-lo
+                        toggleMenuButton(false);
+                    } else {
+                        // Se o botão de menu estiver oculto, exibi-lo
+                        toggleMenuButton(true);
+                    }
+                }
+            });
+        });
+
+        // Ocultar o botão do menu inicialmente
+        toggleMenuButton(false);
+    });
         
     </script>
 
