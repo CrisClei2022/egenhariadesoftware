@@ -964,7 +964,9 @@ function enableBodyScroll() {
 function stopScrollPropagation(event) {
     event.stopPropagation();
 }
+ 
 
+ 
 // Função para navegar para um slide sem animação
 function scrollToCard(index) {
     let slides = document.querySelector(".slides");
@@ -975,7 +977,6 @@ function scrollToCard(index) {
 
         // Fecha o menu ANTES de mudar o slide
         toggleMenu();
-
         slideInput.checked = true; // Seleciona o slide correspondente
 
         setTimeout(() => {
@@ -984,11 +985,16 @@ function scrollToCard(index) {
         }, 50);
     }
 }
+ 
 
+ 
+ 
 // Aplica a função nos itens do menu
 document.querySelectorAll(".menu ul li label").forEach((label, index) => {
     label.addEventListener("click", () => scrollToCard(index));
 });
+
+ 
 
 
 // Attach event listeners to each slide input (radio buttons)
@@ -996,10 +1002,6 @@ document.querySelectorAll('input[name="carousel"]').forEach(input => {
     input.addEventListener("change", updateActiveMenu);
 });
 
-// Attach event listeners to menu labels
-document.querySelectorAll(".menu ul li label").forEach((label, index) => {
-    label.addEventListener("click", () => scrollToCard(index));
-});
 
 // Handle scrolling (mouse wheel) for slide change
 document.addEventListener("wheel", function(event) {
@@ -1047,33 +1049,6 @@ document.addEventListener("touchend", function(event) {
 
     updateActiveMenu();
 }, { passive: true });
-
-
-// Função para navegar para um slide sem animação
-function scrollToCard(index) {
-    let slides = document.querySelector(".slides");
-    let slideInput = document.getElementById("card" + (index + 1));
-
-    if (slideInput) {
-        slides.classList.add("no-transition"); // Remove a animação
-
-        // Fecha o menu ANTES de mudar o slide
-        toggleMenu();
-
-        slideInput.checked = true; // Seleciona o slide correspondente
-
-        setTimeout(() => {
-            slides.classList.remove("no-transition"); // Restaura a animação após 50ms
-            updateActiveMenu(); // Atualiza o destaque do menu
-        }, 50);
-    }
-}
-
-// Aplica a função nos itens do menu
-document.querySelectorAll(".menu ul li label").forEach((label, index) => {
-    label.addEventListener("click", () => scrollToCard(index));
-});
-
 
 
 // Initialize menu highlight on page load
