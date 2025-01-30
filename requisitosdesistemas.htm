@@ -177,13 +177,19 @@
 		.slides.no-transition {
 		    transition: none !important;
 		}
-
         .slide {
-            width: 50vh;
-            height: 90vh;
-            margin: 5vh 0;
-            background-color: #151819;
-            border-radius: 4px;
+        	width: 50vh;
+        	height: 90vh;
+        	margin: 5vh 0;
+        	border-radius: 8px;
+        	text-align: center;
+        	padding: 5px;
+        	/* Gradiente sutil do topo mais claro para a base preta */
+        	background: linear-gradient(
+        	to bottom,
+        	#1f1f1f, /* topo levemente mais claro */
+        	#151819  /* base mais escura */
+        	);
         }
 
         .slide img {
@@ -192,43 +198,41 @@
             object-fit: cover;
             border-radius: 4px;
         }
-        .semester {
-		    font-weight: bold;
-		    font-size: 18px;
-		    color: #a1cca9;
-		    padding: 10px 0;
-		    text-align: center;
-		    background: rgba(255, 255, 255, 0.1); /* Leve transparência */
-		}
-        
-        /* Estilo para a div .materia */
-		.materia {
-		    width: 100%;
-		    height: auto;
-		    text-align: center;
-		    background: rgba(255, 255, 255, 0.1); /* Leve transparência */
-		    padding: 5px;
-		    border-radius: 8px; /* Deixa a borda arredondada */
-		    transition: background 0.3s ease, color 0.3s ease; /* Suaviza as transições */
-		}
-		
-		/* Estilo quando o mouse passar sobre a div */
-		.materia:hover {
-		    cursor: pointer;
-		}
-		
-		/* Estilo do link interno */
-		.materia a {
-		    text-decoration: none; /* Remove sublinhado dos links */
-		    color: inherit; /* Usa a cor definida pela div */
-		    display: block; /* Faz o link preencher a div inteira */
-		}
-		
-		/* Estilo quando o mouse passar sobre a div */
-		.materia:hover a {
-		    color: #afc0cc; /* Muda a cor do texto no hover */
-		}
+/* Classe para o "TEMA", alinhado à direita */
+.tema {
+    text-align: right;
+    font-family: 'Calibri', sans-serif; /* ou 'Times New Roman', serif */
+    font-size: 16pt;                    /* Word costuma usar pt, mas pode adaptar */
+    font-weight: bold;                  /* título em negrito */
+    margin: 0.5em 0;                    /* espaço antes e depois */
+}
 
+/* Classe para o "MÓDULO", também alinhado à direita */
+.modulo {
+    text-align: right;
+    font-family: 'Calibri', sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 0.3em 0;
+}
+
+.textoJustificado {
+    text-align: justify;
+    text-justify: inter-word;  /* ajuda na distribuição das palavras em alguns navegadores */
+    
+    font-family: 'Calibri', sans-serif; /* ou outra fonte */
+    font-size: 12pt;
+    line-height: 1.5;
+    
+    /* recuo de primeira linha */
+    text-indent: 2em; /* Ajuste o valor conforme a necessidade */
+
+    margin: 1em 0;
+}
+
+
+		
+		
 
         input[type="radio"] {
             position: absolute;
@@ -444,475 +448,99 @@
 <input type="radio" name="carousel" id="card50" tabindex="0">
 
         
-	<div class="slides">
-    <!-- 1º SEMESTRE - Abr/24 -->
+<div class="slides">
+
+    <!-- Tema 1 - Apresentação -->
 <div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/arquitetura">
-            <p>1º SEMESTRE - Abr/24</p>
-            <h2>Arquitetura De Computadores</h2>
-        </a>
+    <div class="tema">
+        <p>Tema 1 – Apresentação</p>
+    </div>
+    <div class="textoJustificado">
+        <p>O que realmente o sistema deve fazer; quais são as entradas disponíveis e as saídas esperadas para o sistema, ou seja, que os objetivos estão alinhados com a necessidade?</p>
     </div>
 </div>
 
+<!-- Tema 2 - Introdução a Requisitos de Sistemas / Módulo 1 -->
 <div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/paradigmas-python">
-            <p>1º SEMESTRE - Abr/24</p>
-            <h2>Paradigmas De Linguagens De Programação Em Python</h2>
-        </a>
+    <div class="tema">
+        <p>Tema 2 - Introdução a Requisitos de Sistemas</p>
+    </div>
+    <div class="modulo">
+        <h2>Módulo 1 – Introdução</h2>
+    </div>
+    <div class="textoJustificado">
+        <p>Imagine que uma padaria quer um programa que registre automaticamente a entrada e saída de produtos, como pão, leite e ovos. Assim, ao vender ou receber mercadorias, o sistema atualiza tudo sozinho.</p>
     </div>
 </div>
 
+<!-- Tema 2 / Módulo 2 -->
 <div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/seguranca-informacao">
-            <p>1º SEMESTRE - Abr/24</p>
-            <h2>Introdução À Segurança Da Informação</h2>
-        </a>
+    <div class="tema">
+        <p>Tema 2 - Introdução a Requisitos de Sistemas</p>
+    </div>
+    <div class="modulo">
+        <h2>Módulo 2 – Análise de Dados</h2>
+    </div>
+    <div class="textoJustificado">
+        <p>Antes de criar o programa, é importante entender as necessidades da padaria. Por exemplo, se não soubermos que o dono quer ser avisado quando o estoque de farinha estiver baixo, o sistema pode acabar sendo inútil.</p>
     </div>
 </div>
 
+<!-- Tema 2 / Módulo 3 -->
 <div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/lingua-portuguesa">
-            <p>1º SEMESTRE - Abr/24</p>
-            <h2>Língua Portuguesa</h2>
-        </a>
+    <div class="tema">
+        <p>Tema 2 - Introdução a Requisitos de Sistemas</p>
+    </div>
+    <div class="modulo">
+        <h2>Módulo 3 – Levantamento de Requisitos</h2>
+    </div>
+    <div class="textoJustificado">
+        <p>O programador conversa com o dono da padaria para entender o que ele precisa. Assim, descobre que o programa deve emitir alertas quando os produtos estiverem acabando e gerar relatórios de vendas diárias.</p>
     </div>
 </div>
 
+<!-- Tema 2 / Módulo 4 -->
 <div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/pensamento-computacional">
-            <p>1º SEMESTRE - Abr/24</p>
-            <h2>Pensamento Computacional</h2>
-        </a>
+    <div class="tema">
+        <p>Tema 2 - Introdução a Requisitos de Sistemas</p>
+    </div>
+    <div class="modulo">
+        <h2>Módulo 4 – Qualidade do Software</h2>
+    </div>
+    <div class="textoJustificado">
+        <p>Durante a criação do programa, o desenvolvedor testa várias vezes para garantir que ele funciona bem. Por exemplo, verifica se o alerta de estoque baixo aparece na hora certa.</p>
     </div>
 </div>
 
+<!-- Tema 2 / Módulo 5 -->
 <div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/desenvolvimento-software">
-            <p>1º SEMESTRE - Abr/24</p>
-            <h2>Processos De Desenvolvimento De Software</h2>
-        </a>
+    <div class="tema">
+        <p>Tema 2 - Introdução a Requisitos de Sistemas</p>
+    </div>
+    <div class="modulo">
+        <h2>Módulo 5 – Controle e Garantia de Qualidade</h2>
+    </div>
+    <div class="textoJustificado">
+        <p>Antes de entregar o programa, o dono da padaria e o programador fazem testes juntos para confirmar que tudo funciona como esperado. Se algo estiver errado, dá tempo de corrigir.</p>
     </div>
 </div>
 
-
-    <!-- 2º SEMESTRE - Out/24 -->
+<!-- Tema 2 / Módulo 6 -->
 <div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/redes">
-            <p>2º SEMESTRE - Out/24</p>
-            <h2>Fundamentos De Redes De Computadores</h2>
-        </a>
+    <div class="tema">
+        <p>Tema 2 - Introdução a Requisitos de Sistemas</p>
     </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/sistemas-sociedade">
-            <p>2º SEMESTRE - Out/24</p>
-            <h2>Sistemas De Informação E Sociedade</h2>
-        </a>
+    <div class="modulo">
+        <h2>Módulo 6 – Gerenciamento da Qualidade</h2>
     </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/web-development">
-            <p>2º SEMESTRE - Out/24</p>
-            <h2>Desenv. Web Em HTML5, CSS, JavaScript E PHP</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/programacao">
-            <p>2º SEMESTRE - Out/24</p>
-            <h2>Introdução À Programação De Computadores</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/requisitos-sistemas">
-            <p>2º SEMESTRE - Out/24</p>
-            <h2>Requisitos De Sistemas</h2>
-        </a>
+    <div class="textoJustificado">
+        <p>O programador cria um plano para garantir que o programa será feito de forma organizada, desde o início até a entrega, sempre checando se está dentro do combinado.</p>
     </div>
 </div>
 
 
-    <!-- 3º SEMESTRE - Abr/25 -->
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/arquitetura-sistemas">
-            <p>3º SEMESTRE - Abr/25</p>
-            <h2>Arquitetura De Sistemas</h2>
-        </a>
-    </div>
 </div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/usabilidade">
-            <p>3º SEMESTRE - Abr/25</p>
-            <h2>Engenharia De Usabilidade</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/estrutura-dados">
-            <p>3º SEMESTRE - Abr/25</p>
-            <h2>Estrutura De Dados</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/software-basico">
-            <p>3º SEMESTRE - Abr/25</p>
-            <h2>Programação De Software Básico Em C</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/poo-java">
-            <p>3º SEMESTRE - Abr/25</p>
-            <h2>Programação Orientada A Objetos Em Java</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/matematica-logica">
-            <p>3º SEMESTRE - Abr/25</p>
-            <h2>Matemática E Lógica</h2>
-        </a>
-    </div>
-</div>
-
-
-    <!-- 4º SEMESTRE - Out/25 -->
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/comportamento-organizacional">
-            <p>4º SEMESTRE - Out/25</p>
-            <h2>Comportamento Organizacional</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/gerencia-configuracao">
-            <p>4º SEMESTRE - Out/25</p>
-            <h2>Gerência De Configuração</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/indicadores-ti">
-            <p>4º SEMESTRE - Out/25</p>
-            <h2>Indicadores De Desempenho De Ti</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/modelagem-uml">
-            <p>4º SEMESTRE - Out/25</p>
-            <h2>Modelagem De Sistemas Em UML</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/pensamento-computacional">
-            <p>4º SEMESTRE - Out/25</p>
-            <h2>Pensamento Computacional</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/computacao-nuvem">
-            <p>4º SEMESTRE - Out/25</p>
-            <h2>Computação Em Nuvem</h2>
-        </a>
-    </div>
-</div>
-
-
-    <!-- 5º SEMESTRE - Abr/26 -->
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/dev-rapido-python">
-            <p>5º SEMESTRE - Abr/26</p>
-            <h2>Desenvolvimento Rápido De Aplicações Em Python</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/web-full-mvc">
-            <p>5º SEMESTRE - Abr/26</p>
-            <h2>Desenvolvimento Web Full MVC</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/engenharia-produto">
-            <p>5º SEMESTRE - Abr/26</p>
-            <h2>Engenharia De Produto</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/padroes-projetos-java">
-            <p>5º SEMESTRE - Abr/26</p>
-            <h2>Padrões De Projetos De Software Com Java</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/sistemas-operacionais">
-            <p>5º SEMESTRE - Abr/26</p>
-            <h2>Sistemas Operacionais</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/big-data-python">
-            <p>5º SEMESTRE - Abr/26</p>
-            <h2>Tópicos De Big Data Em Python</h2>
-        </a>
-    </div>
-</div>
-
-
-    <!-- 6º SEMESTRE - Out/26 -->
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/cloud-iot">
-            <p>6º SEMESTRE - Out/26</p>
-            <h2>Aplic. De Cloud, IoT E Indústria 4.0 Em Python</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/metodos-ageis">
-            <p>6º SEMESTRE - Out/26</p>
-            <h2>Métodos Ágeis Com Scrum</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/modelagem-processos">
-            <p>6º SEMESTRE - Out/26</p>
-            <h2>Modelagem De Processos</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/python-analise-dados">
-            <p>6º SEMESTRE - Out/26</p>
-            <h2>Programação Em Python Para Análise De Dados</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/android-development">
-            <p>6º SEMESTRE - Out/26</p>
-            <h2>Programação Para Dispositivos Móveis Em Android</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/banco-de-dados">
-            <p>6º SEMESTRE - Out/26</p>
-            <h2>Banco De Dados</h2>
-        </a>
-    </div>
-</div>
-
-    <!-- 7º SEMESTRE - Abr/27 -->
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/algoritmos-complexidade">
-            <p>7º SEMESTRE - Abr/27</p>
-            <h2>Algoritmos E Complexidade</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/banco-dados-nosql">
-            <p>7º SEMESTRE - Abr/27</p>
-            <h2>Banco De Dados NoSQL</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/backend-development">
-            <p>7º SEMESTRE - Abr/27</p>
-            <h2>Desenvolvimento De Back-end</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/direito-cibernetico">
-            <p>7º SEMESTRE - Abr/27</p>
-            <h2>Direito Cibernético</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/metodos-quantitativos">
-            <p>7º SEMESTRE - Abr/27</p>
-            <h2>Métodos Quantitativos</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/qualidade-testes">
-            <p>7º SEMESTRE - Abr/27</p>
-            <h2>Qualidade E Testes De Software</h2>
-        </a>
-    </div>
-</div>
-
-
-    <!-- 8º SEMESTRE - Out/27 -->
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/frontend-development">
-            <p>8º SEMESTRE - Out/27</p>
-            <h2>Desenvolvimento De Front-end</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/software-seguro">
-            <p>8º SEMESTRE - Out/27</p>
-            <h2>Desenvolvimento De Software Seguro</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/devops">
-            <p>8º SEMESTRE - Out/27</p>
-            <h2>Desenvolvimento E Operações (DevOps)</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/direitos-humanos">
-            <p>8º SEMESTRE - Out/27</p>
-            <h2>Direitos Humanos</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/educacao-ambiental">
-            <p>8º SEMESTRE - Out/27</p>
-            <h2>Educação Ambiental</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/gerenciamento-projetos">
-            <p>8º SEMESTRE - Out/27</p>
-            <h2>Gerenciamento De Projetos</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/linhas-produtos">
-            <p>8º SEMESTRE - Out/27</p>
-            <h2>Linhas De Produtos De Software</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/historia-afrodescendentes">
-            <p>8º SEMESTRE - Out/27</p>
-            <h2>História Dos Povos Indígenas E Afrodescendentes</h2>
-        </a>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="materia">
-        <a href="https://www.example.com/libras-inclusao">
-            <p>8º SEMESTRE - Out/27</p>
-            <h2>Tópicos Em Libras: Surdez E Inclusão</h2>
-        </a>
-    </div>
-</div>
-
-</div>
-
     
-</div>
 
     <script>
 let startY;
@@ -1112,22 +740,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Evento de clique nos cards
-        cards.forEach(card => {
-            card.addEventListener("click", function () {
-                if (menuVisible) {
-                    // Se o menu estiver aberto, fecha o menu
-                    toggleMenu();
-                } else {
-                    if (menuBtnVisible) {
-                        // Se o botão de menu já estiver aparecendo, ocultá-lo
-                        toggleMenuButton(false);
-                    } else {
-                        // Se o botão de menu estiver oculto, exibi-lo
-                        toggleMenuButton(true);
-                    }
-                }
-            });
-        });
+	cards.forEach(card => {
+	    card.addEventListener("click", function () {
+	        if (menuVisible) {
+	            // Se o menu estiver aberto, fecha o menu e exibe o botão imediatamente
+	            toggleMenu();
+	            toggleMenuButton(true); // Exibir o botão do menu imediatamente
+	        } else {
+	            if (menuBtnVisible) {
+	                toggleMenuButton(false);
+	            } else {
+	                toggleMenuButton(true);
+	            }
+	        }
+	    });
+	});
 
         // Ocultar o botão do menu inicialmente
         toggleMenuButton(false);
