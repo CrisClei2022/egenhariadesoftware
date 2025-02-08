@@ -352,27 +352,79 @@ Em resumo, o enlace é o "caminho" físico que permite a transmissão dos dados,
 </p>
 <p class="alternativas">d) Atraso de processamento; Atraso de fila; Atraso de propagação; Atraso de transmissão.</p>
 
-</div> 
+</div> <br>
+<!--  -->
+<div class="conteudo">
+<h4>Perda</h4>
+
+Um sistema final considera que o fenômeno da perda é um pacote que foi transmitido para o núcleo da rede, sem nunca ter emergido dele no destino. 
+
+Entretanto, as aplicações de streaming toleram perda tipicamente. Nesse tipo de serviço, se alguns pacotes forem perdidos, a aplicação não terá prejuízos, pois carregam, por exemplo, um conjunto de pixels de um dos frames do vídeo. Se esse pacote não chegar, apenas alguns pixels deixarão de ser reproduzidos e dificilmente o usuário perceberá.
+
+Voltemos ao caso da aplicação que não tolera perda. O desenvolvedor da aplicação precisa implementar alguma técnica de controle de perdas? A resposta é não, pois a rede oferece uma infraestrutura de serviços. Então, utilizando a API (socket) correta para a aplicação, os serviços existentes na rede corrigirão a perda de pacotes, assim, o desenvolvedor pode focar na lógica da aplicação porque a rede cuidará da entrega dos pacotes. 
+
+<p class="pergunta">Analise as afirmações a seguir e marque verdadeiro ou falso:
+
+<br><br>
+i) Como a capacidade da fila (buffer) é finita, 
+
+<br><br>
+ii) um pacote pode chegar ao roteador e encontrar o buffer cheio;
+
+<br><br>
+iii) portanto, o roteador terá que descartar o pacote, isto é, ele será perdido.</p>
+
+<p class="alternativas">a)V, F, V. </p>
+<p class="alternativas">b)F, F, F. </p>
+<p class="alternativas">c)V, V, V. x</p>
+<p class="alternativas">d)F, V, V. </p>
+
+</div>
 
 
 <br>
 <!--  -->
-<h4> Parâmetros de Rede </h4> 
+<div class="conteudo">
+<h4>Atraso Fim a Fim</h4>
+
+<p class="pergunta">Questão </p>
+
+<p class="alternativas">a) </p>
+<p class="alternativas">b) </p>
+<p class="alternativas">c) </p>
+<p class="alternativas">d) </p>
+
+</div>
 
 
 <br>
 <!--  -->
-<h4> Atraso Fim a Fim </h4> 
-
-
-<br>
-<!--  -->
+<div class="conteudo">
 <h4> Programa Traceroute </h4> 
 
+<p class="pergunta">Questão sobre... </p>
+
+<p class="alternativas">a) </p>
+<p class="alternativas">b) </p>
+<p class="alternativas">c) </p>
+<p class="alternativas">d) </p>
+
+</div>
+
 
 <br>
 <!--  -->
-<h4> Vazão  </h4> 
+<div class="conteudo">
+<h4>Vazão</h4>
+
+<p class="pergunta">Questão sobre vazão </p>
+
+<p class="alternativas">a) </p>
+<p class="alternativas">b) </p>
+<p class="alternativas">c) </p>
+<p class="alternativas">d) </p>
+
+</div>
 
 
 <br>
@@ -404,3 +456,4 @@ Em resumo, o enlace é o "caminho" físico que permite a transmissão dos dados,
 <!--  -->
 <h4> História da Internet:anos 1960, 1970,  1980, Anos 1990 e  2000 Até o Presente  </h4> 
 <h4> </h4>
+
