@@ -402,6 +402,7 @@ Em resumo, o enlace é o "caminho" físico que permite a transmissão dos dados,
 <p class="alternativas">d) Atraso de processamento; Atraso de fila; Atraso de propagação; Atraso de transmissão.</p>
 
 </div> <br>
+
 <!--  -->
 <div class="conteudo">
 <h4>Perda</h4>
@@ -428,10 +429,9 @@ iii) portanto, o roteador terá que descartar o pacote, isto é, ele será perdi
 <p class="alternativas">c)V, V, V. x</p>
 <p class="alternativas">d)F, V, V. </p>
 
-</div>
+</div><br>
 
 
-<br>
 <!--  -->
 <div class="conteudo">
 <h4>Atraso Fim a Fim</h4>
@@ -461,10 +461,9 @@ iii) portanto, o roteador terá que descartar o pacote, isto é, ele será perdi
 	tempo no sistema final, isso inclui os atrasos que 
 	foram abordados.
 
-</div>
+</div><br>
 
 
-<br>
 <!--  -->
 <div class="conteudo">
 <h4>Vazão</h4>
@@ -519,11 +518,9 @@ iv - Em uma rede sem fio, interferências, obstáculos físicos
 	Retransmissões; ii - Overhead dos Protocolos; iii - 
 	Cáculo Básico de Vazão; iv - Condições do Enlace.</p>
 
-</div>
+</div><br>
 
 
-
-<br>
 <!--  -->
 <h4> Arquitetura de Camadas  </h4> 
 📚 Camadas são etapas com prioridade e sequência prestabelcida (hierarquia), onde ocorre o processamento/tratamento dos dados transmitidos. 
@@ -586,8 +583,44 @@ d) i - Aplicação; ii - Apresentação; iii - Transporte; iv - Sessão; v - Red
 
 <br>
 <!--  -->
-<h4> Tcp e Udp   </h4> 
+<h4>Protocolos de Transporte</h4> 
 
+O TCP e UDP são  específicos para a arquitetura de protocolos TCP/IP, 
+que é a utilizada na Internet mundial, porém em outras redes podem 
+existir outros protocolos de transporte além do TCP e UDP. 
+
+TCP
+Provê serviços orientados à conexão para suas aplicações. Alguns 
+serviços são: entrega garantida de mensagens, controle de fluxo 
+(compatibilização das velocidades do remetente e do receptor), 
+controle de congestionamento (uma origem reduz sua velocidade 
+de transmissão quando a rede está congestionada) e garantia da 
+ordem das mensagens.
+
+UDP
+Provê serviço não orientado à conexão para suas aplicações. É 
+um serviço econômico sem controle de fluxo e de congestionamento 
+adequado para as aplicações que toleram perda de pacotes, mas 
+não toleram atrasos.
+
+Considere uma aplicação que oferece a transmissão de videos ao 
+vivo com uma função simultanea de troca de mensagens entre os 
+expectadores.
+
+Seria possível usar tanto o protocolo TCP quanto UDP para diferentes 
+funcionalidades na mesma aplicação?
+
+a) Não, pois cada aplicação pode utilizar somente um protocolo de transporte.
+
+b) Sim, pois o protocolo TCP pode perder alguns frames, mas evitaria atrasos. 
+Enquanto que o protocolo UDP garantiria que as mensagens chegassem por completo e na ordem correta.
+
+c) Sim, pois o protocolo UDP pode perder alguns frames, mas evitaria atrasos. 
+Enquanto que o protocolo TCP garantiria que as mensagens chegassem por completo e na ordem correta.
+
+d) Sim, pois o protocolo TCP seria ideal para transmissões mais rápidas onde 
+alguma perda é aceitável. Enquanto que o protocolo UDP seria melhor para 
+transmissões que precisam ser confiáveis e ordenadas.
 
 <br>
 <!--  -->
