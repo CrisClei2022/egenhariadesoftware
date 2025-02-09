@@ -1,0 +1,520 @@
+Bem-vindo à disciplina de Fundamentos de Redes de Computadores! Nesta jornada, você terá a oportunidade de adquirir conhecimentos essenciais que serão fundamentais para o seu sucesso como um profissional de redes de computadores. 
+Começaremos reconhecendo os conceitos básicos de redes de computadores e a internet. Estes são os blocos de construção essenciais que você precisa entender antes de avançar. 
+Em seguida, exploraremos como medir e avaliar o desempenho das redes. É importante saber como julgamos a qualidade das conexões que usamos diariamente. Você também aprenderá sobre a estrutura em camadas das redes de computadores que é um dos conceitos-chave em redes. Isso é fundamental para entender como as redes são organizadas e como funcionam de maneira eficiente. 
+Em seguida, daremos uma olhada no histórico da internet, para entender como as redes evoluíram ao longo do tempo. Agora vamos adentrar nos modelos OSI e na arquitetura TCP/IP. Você identificará as camadas do modelo OSI e da arquitetura TCP/IP, entendendo suas funcionalidades e interações. 
+Além disso, exploraremos as arquiteturas de aplicações e os serviços oferecidos pela camada de aplicação. Você descobrirá como as aplicações interagem na rede e como os serviços da camada de aplicação são essenciais para a comunicação eficaz. Na camada de transporte, você aprenderá sobre os elementos que a compõem e comparará os serviços oferecidos. Isso é vital para garantir a entrega confiável de dados na rede. No Modelo OSI, a camada de rede desempenha um papel crucial. 
+Você se familiarizará com os conceitos básicos dessa camada e aplicará configurações de rede IP para garantir a conectividade eficiente. Para manter as redes seguras, também abordaremos os riscos de segurança nas redes de computadores e exploraremos como selecionar softwares e equipamentos adequados para mitigar esses riscos. 
+A segurança da informação é uma preocupação constante em nosso campo, e você será capaz de contribuir significativamente para a proteção de dados e sistemas. Por fim, mergulharemos na arquitetura de gerenciamento de redes, reconhecendo sua importância na administração e manutenção de redes de computadores. 
+No entanto, sua formação não acaba ao dominar os princípios da arquitetura de redes ou ao aprender sobre segurança. O campo da TI está em constante evolução, exigindo uma mentalidade de aprendizado contínuo. 
+Mas aqui está a boa notícia: cada passo, cada descoberta, cada compreensão que você alcança o levará mais perto de se tornar um especialista na área. Estar em uma universidade, buscando conhecimento, é uma grande conquista. Valorize este momento, celebre cada transformação do saber e acolha a oportunidade de crescer. Lembre-se de que você não está apenas adquirindo informações, mas desenvolvendo habilidades que terão um impacto direto na evolução das empresas e da sociedade. 
+Portanto, abrace este desafio com entusiasmo e paixão! Você está prestes a embarcar em uma jornada de aprendizado que o capacitará a fazer a diferença no mundo da tecnologia da informação. E sempre se lembre: o conhecimento é a chave para o sucesso profissional, e você está no lugar certo para conquistá-lo. 
+Bons estudos!
+ 
+1.	Redes de computadores e a internet
+Os conceitos básicos e aspectos históricos relacionados às redes de computadores e à internet.
+Prof. Fabio Henrique Silva
+
+Itens iniciais
+
+Propósito
+A organização das redes de computadores é essencial para os profissionais de Tecnologia da Informação (TI) utilizarem os serviços oferecidos por uma ou mais camadas de um modelo de arquitetura de redes.
+Objetivos
+•	Reconhecer os conceitos básicos de redes de computadores e a internet.
+•	Descrever os parâmetros de avaliação das redes.
+•	Identificar a arquitetura de redes de computadores como um modelo em camadas.
+•	Descrever os aspectos da evolução das redes e a internet.
+
+Introdução
+A internet, nos moldes atuais, possui bilhões de usuários conectados, dispositivos e enlaces de comunicação, além de uma quantidade enorme de computadores. Os usuários podem conectar uma alta gama de dispositivos, tais como: notebooks, smart TVs, smartphones, sensores, webcams, console para jogos e utensílios domésticos.
+Nesses diversos dispositivos, são executadas diversas aplicações de redes que revolucionaram a forma como vivemos, seja no trabalho, no comércio, nas relações interpessoais, como também na forma como nos divertimos.
+Não tem como negarmos a importância da internet para todos nós, mas para quem estuda computação vai muito além do simples uso. É importante compreender os conceitos de organização das redes de computadores e internet, necessários para utilização nas redes de hoje e do futuro.
+
+2.	Conceitos básicos
+O que é a internet?
+Confira agora as principais reflexões sobre o que, de fato, é a internet.
+As redes de computadores podem ser definidas como um conjunto de módulos processadores interligados por um sistema de comunicação, capazes de trocar informações e compartilhar recursos.
+Já a internet pode ser definida como um conjunto de rede de computadores que opera, basicamente, utilizando os protocolos TCP e IP, e interconecta bilhões de dispositivos de computação ao redor do mundo.
+No entanto, a internet não é apenas um conjunto de redes interligadas. Há diversas formas de utilização para definir o que é a internet e como ela está organizada. Por exemplo, podemos defini-la de acordo com os componentes de software e hardware básicos que a formam.
+Podemos considerar que a internet é formada por três grandes partes:
+ 
+1.	Sistemas finais.
+2.	Núcleo da rede.
+3.	Redes de acesso.
+A junção dessas três partes permite que você use seu smartphone, acesse um aplicativo e utilize um serviço hospedado em qualquer datacenter no mundo.
+Outra forma de enxergar a internet é como uma infraestrutura de redes que fornece diversos serviços para que as aplicações de rede possam trocar informações. Alguns dos serviços oferecidos pela internet são: definir o caminho da origem até o destino; corrigir os erros que possam ocorrer no trajeto; evitar que haja sobrecarga dos componentes.
+Os serviços fornecidos pela internet permitem que os desenvolvedores das aplicações possam se preocupar com suas funcionalidades apenas, não somente com diversos detalhes de como a informação será propagada. Basta o aplicativo enviar os dados para essa infraestrutura de serviços que ela fará o maior esforço para que a informação seja entregue ao destino.
+Vamos agora conhecer esses componentes?
+
+
+
+O entorno da internet
+A borda da rede
+Confira agora os principais pontos sobre a borda da rede.
+Os dispositivos que utilizamos e que estão conectados à internet são chamados de sistemas finais, ou hosts (hospedeiros), pois se encontram no entorno, ou periferia, da internet e são nesses dispositivos que executamos as aplicações de rede.
+
+De uma forma geral, eles podem ser divididos em duas grandes categorias:
+ 
+ 
+Clientes
+São os desktops, notebooks, smartphones e tablets, dispositivos que, normalmente, estão de posse de algum usuário.
+ 
+Servidores
+São as máquinas mais poderosas, que armazenam e distribuem páginas web, vídeo em tempo real, retransmissão de e-mails etc.
+ 
+
+Sobre os servidores, é comum chamarmos de máquinas grandes, poderosas, mas, na realidade, o que define a máquina ser servidora não é o hardware, e sim o software executado por ela. Como o nome diz, o servidor será o dispositivo que contém o software, servindo alguma coisa ou algum serviço para um cliente que faz um pedido ou requisição.
+ 
+A imagem a seguir ilustra a localização dos sistemas finais em uma infraestrutura de redes de computadores. Confira!
+ 
+Redes de acesso
+A rede de acesso é uma rede física que conecta os sistemas finais ao primeiro roteador (conhecido como “roteador de borda”) de um caminho partindo de um sistema final até outro qualquer. Podemos dizer que a rede de acesso é o meio físico, ou enlace, que faz a ligação dos sistemas finais ao núcleo da rede:
+ 
+Redes de acesso.
+Os meios físicos podem ser enquadrados em duas categorias:
+
+Meios guiados
+São as redes com fio, ou seja, os sinais são dirigidos ao longo de um meio sólido, tal como um cabo de fibra ótica, que propaga sinais luminosos; um par de fios de cobre trançado ou um cabo coaxial, que propaga sinais elétricos.
+
+Meios não guiados
+São as famosas redes wireless. Nestes meios, os sinais se propagam pelo espaço aberto, como é o caso de canais de rádio empregados em redes domésticas sem fio, os sinais da telefonia celular, ou de um canal digital de satélite. Nesses tipos de redes, dizemos que são propagados sinais eletromagnéticos.
+As redes de acesso também podem ser divididas em duas categorias, de acordo com a finalidade a que se destina: redes residenciais ou institucionais.
+
+Redes de acesso residenciais
+Os tipos de acesso residenciais bastante conhecidos são a linha digital de assinante (DSL), através de cabo coaxial, e a fibra ótica.
+Para o DSL, são utilizados os modems DSL que utilizam a linha telefônica existente fornecida pela mesma empresa fornecedora do serviço de telefonia fixa. Já para o acesso através de cabo coaxial, a infraestrutura utilizada é a mesma oferecida pela empresa que fornece o serviço de televisão a cabo.
+
+Comentário
+Para o acesso através da fibra ótica, utilizamos o conceito chamado FTTH (fiber to the home), um caminho de fibra ótica diretamente até a residência. Convém ressaltar que FTTH não é um padrão ou protocolo em si, mas apenas um conceito indicando que a fibra ótica chega até a residência ou empresa.
+
+Em geral, uma fibra que sai da central de telecomunicações é compartilhada por várias residências; ela é dividida em fibras individuais do cliente apenas após se aproximar relativamente das casas.
+Em locais onde DSL, cabo e FTTH não estão disponíveis (por exemplo, em locais rurais), um enlace de satélite pode ser empregado para conexão (em velocidades mais baixas que as tecnologias tipicamente usadas).
+E ainda existe o acesso discado por linhas telefônicas tradicionais, que são os precursores das redes de acesso, no qual um modem doméstico se conecta por uma linha telefônica a um modem no provedor de acesso, ocupando a linha telefônica e com baixas velocidades. Esse tipo de acesso era o mais comum até a década de 1990 e início dos anos 2000.
+
+Curiosidade
+Caso não conheça, procure na internet sobre o barulho característico dos modems utilizados no acesso discado.
+
+Redes de acesso institucionais
+Algumas das soluções residenciais também podem ser utilizadas para as redes de acesso institucionais, mas as chamadas redes locais (LANs) costumam ser usadas nos ambientes universitários, corporativos e residenciais, para conectar sistemas finais ao roteador de borda da rede, com o uso predominante de um padrão conhecido como ethernet que, tipicamente, emprega cabos metálicos, ou através das redes sem fio, ou wi-Fi, que empregam o padrão IEEE 802.11.
+
+Comentário
+É cada vez mais comum utilizarmos as redes de telefonia celular como rede de acesso para acessar a internet, comumente chamando de 4G/3G. Possuem alcance bem maior que o wi-fi e as empresas de telecomunicação têm investido na quinta geração (5G), que oferece redes de acesso remotas de maior velocidade.
+ 
+O núcleo da rede
+O núcleo da rede consiste em uma rede de dispositivos, por exemplo, roteadores e switches, os enlaces, normalmente de alta velocidade, que interligam esses dispositivos. O núcleo da rede oferece os possíveis caminhos que permitem a interconexão dos sistemas finais, conforme mostrado na imagem (destaque em azul). 
+ 
+ 
+Núcleo da rede.
+O núcleo da rede é organizado pelos diversos provedores de serviços de internet (Internet Service Providers — ISPs), pelos quais nós, usuários, contratamos serviços para nos conectarmos à internet. Conectar usuários finais e provedores de conteúdo a um provedor de acesso (ISP) é apenas uma parte de todo o desafio: interligar os bilhões de sistemas finais que compõem a internet. Isso é feito a partir da criação de uma rede de redes.
+Existem centenas de milhares de ISPs, com diferentes portes, abrangência e finalidades. Por exemplo, ISPs que têm por finalidade oferecer serviço de conexão dos usuários à internet. Outros são conhecidos por serem ISPs de trânsito, que realizam a interligação de ISPs, sem oferecer acesso direto aos usuários. Normalmente, os ISPs de trânsito são responsáveis pela administração dos famosos cabos submarinos.
+A abrangência dos ISPs está relacionada à região ou alcance que possuem. Em determinada região, como uma cidade, pode haver um ISP regional ao qual os ISPs menores, chamados locais, se conectam. Cada ISP regional, então, se conecta a ISPs chamados de nível 1, que possuem abrangência nacional e internacional. Por sua vez, os ISPs de nível 1 podem se interconectar e trocar dados entre si.
+É possível em algumas regiões haver um ISP regional maior, ao qual os ISPs regionais menores se conectam ao ISP regional maior, então, se conecta a um ISP de nível 1.
+Perceba como é complexo o núcleo da rede e que existe certa hierarquia de provedores.
+Para facilitar a interconexão dos diversos provedores, existe o chamado ponto de presença (PoP — Point of Presence), que é um grupo de um ou mais roteadores (no mesmo local) na rede do provedor, onde os ISPs clientes podem se conectar para poderem acessar outras redes.
+Qualquer ISP (exceto os de nível 1) pode efetuar o multi-homing, ou seja, conectar-se a dois ou mais ISPs provedores para terem redundância. Por exemplo, um ISP local pode efetuar multi-home com dois ISPs regionais, ou então com dois ISPs regionais e também com um ISP de nível 1.
+
+Comentário
+Os ISPs clientes pagam aos seus ISPs provedores para obter interconectividade global com a internet. Um ISP cliente paga a um ISP provedor conforme a quantidade de tráfego que ele troca com o provedor.
+
+Para reduzir custos, um par de ISPs próximos no mesmo nível de hierarquia pode emparelhar, ou seja, conectar diretamente suas redes, de modo que todo o tráfego entre elas passe pela conexão direta, em vez de passar por intermediários mais à frente. Isso em geral é feito em acordo, ou seja, nenhum ISP paga ao outro.
+Os ISPs de nível 1 também são emparelhados uns com os outros, sem taxas. Assim, uma empresa de terceiros pode criar um ponto de troca da internet (internet exchange point — IXP), que quase sempre é em um prédio à parte, com seus próprios comutadores. O IXP é um ponto de encontro onde vários ISPs podem se emparelhar e permitir que haja conexão direta entre os diversos provedores que utilizam essa infraestrutura.
+
+Saiba Mais
+No Brasil, existe o IX (ix.br), que é o ponto de troca de tráfego utilizado pelos principais provedores de acesso à internet.
+
+A rede como serviço
+Confira agora os principais pontos sobre a rede como serviço.
+Podemos também descrever a internet como uma infraestrutura provedora de serviços a aplicações.
+Existe uma quantidade grande de aplicações para internet (“aplicações distribuídas”), como correio eletrônico, navegadores da web, redes sociais, mensagem instantânea, voz sobre IP (VoIP), vídeo em tempo real, jogos distribuídos, compartilhamento de arquivos peer-to peer (P2P), televisão pela internet, login remoto etc.
+As aplicações da internet são executadas nos sistemas finais, e não nos comutadores localizados no núcleo da rede. Você precisará criar programas que sejam executados em sistemas finais, utilizando uma ou mais linguagens de programação, como Java, C ou Python.
+
+Saiba Mais
+Uma Interface de Programação de Aplicação (API) específica, como o programa executado no sistema final, consegue enviar os dados através da rede, para que alcance o sistema final de destino.
+Utilizando essa API, o desenvolvedor não precisa se preocupar em como as informações serão entregues ao destino, nem se sofreram algum tipo de erro no meio do caminho, muito menos como fazer para transformar os bits em sinais elétricos, pulsos de luz ou ondas eletromagnéticas para serem propagadas pelo espaço.
+A infraestrutura de rede se encarrega de realizar todas essas ações que estarão distribuídas nos diversos componentes de rede, desde o sistema operacional existente no seu computador ou smartphone, passando pelos roteadores, switches, entre outros componentes.
+E aí? Ficou curioso para saber qual API é essa que você pode utilizar? Acalme-se. Por enquanto, passaremos apenas o nome: socket.
+
+ 
+3.	Parâmetros de avaliação
+
+Atraso em redes de comutação de pacotes
+Confira agora as principais reflexões sobre os parâmetros de avaliação.
+
+O ideal seria que os serviços da internet transferissem dados entre sistemas finais, de modo instantâneo e sem nenhuma perda. Porém, as redes de computadores restringem a quantidade de dados que podem ser transferidos entre sistemas finais, apresentam atrasos entre sistemas finais e ainda podem perder pacotes. As leis da física introduzem atraso e perda.
+
+Para ser possível a formulação de propostas de soluções para os problemas encontrados no funcionamento das redes de computadores, é recomendável examinar e quantificar esse contexto como parâmetros para avaliação das redes. Por isso, estudaremos os parâmetros relacionados ao atraso, à perda e vazão em redes de computadores.
+
+Tipos de atraso
+
+Confira agora os principais pontos sobre tipos de atraso.
+
+ 
+
+Considere um pacote enviado de um nó por meio do roteador A até o roteador B. Um pacote somente pode ser transmitido do roteador A ao B, se não houver nenhum outro pacote sendo transmitido pelo enlace e se não houver outros à sua frente na fila. Se o enlace estiver ocupado, ou com pacotes à espera, o recém-chegado entrará na fila (buffer, ou memória, do roteador). A imagem a seguir ilustra os elementos citados. Veja!
+
+O atraso de nó no roteador A.
+Um pacote começa em um sistema final de origem, passa por vários roteadores até ser entregue em outro sistema final de destino. Quando um pacote viaja de um dispositivo ou um nó (sistema final ou roteador) ao nó subsequente (sistema final ou roteador), sofre, ao longo desse caminho, diversos tipos de atraso em cada nó. Os mais importantes deles são o atraso de processamento nodal, o atraso de fila, o atraso de transmissão e o atraso de propagação. Eles formam o atraso total.
+
+O desempenho de muitas aplicações da internet é muito afetado por esses atrasos que ocorrem na rede. Vamos detalhá-los?
+
+Atraso de processamento - Tempo gasto em um dispositivo para examinar o cabeçalho do pacote e determinar por qual saída deve encaminhá-lo.
+
+Atraso de fila - Tempo decorrido enquanto um pacote espera para ser transmitido no enlace. Se a fila (buffer) estiver vazia, e nenhum outro pacote estiver sendo transmitido naquele momento, então o tempo de fila de nosso pacote será zero. Por outro lado, se o tráfego estiver intenso e houver muitos pacotes também esperando para serem transmitidos, o atraso de fila será longo.
+
+Atraso de transmissão - Tempo exigido para empurrar (isto é, transmitir) todos os bits do pacote para o enlace. É uma função do comprimento do pacote e da taxa de transmissão do enlace, mas nada tem a ver com a distância entre os roteadores.
+
+Atraso de propagação - Tempo necessário para propagar o bit desde o início do enlace até o próximo nó. O bit se desloca pelo meio de acordo com a velocidade de propagação do enlace, a qual depende do meio físico, isto é, se o meio utilizado é fibra ótica, fios de cobre e assim por diante. Este atraso é diretamente relacionado à distância entre os roteadores, mas nada tem a ver com o comprimento do pacote ou com a taxa de transmissão do enlace.
+
+Importante ressaltar que os tipos de atraso se refletem nas aplicações de maneira diferente. As aplicações de tempo real, que tem interatividade, com jogos interativos, vídeo e áudio conferências, são mais suscetíveis ao atraso de propagação. Por outro lado, as aplicações que transferem um grande volume de dados, como transferências de arquivos, têm o atraso de transmissão como o ponto crítico.
+
+Comentário
+O atraso de fila pode variar de pacote para pacote. Por exemplo, se dez pacotes chegarem a uma fila vazia ao mesmo tempo, o primeiro pacote não sofrerá nenhum atraso de fila, ao passo que o último sofrerá um relativamente grande (enquanto espera que os outros nove sejam transmitidos). O processo de chegada a uma fila é aleatório.
+
+Essa variação do atraso de fila causa um efeito chamado jitter (variação de atraso), que impacta significativamente as aplicações de streaming (multimídia), as quais precisam reproduzir os pacotes em intervalos regulares. Portanto, a variação do atraso impactará a reprodução em intervalos regulares, tendo em vista que os pacotes não chegarão com atrasos regulares.
+
+Perda, atraso fim a fim, vazão
+A influência dos parâmetros de redes nas aplicações
+Confira agora os principais pontos sobre os parâmetros de redes.
+
+Perda
+Outro parâmetro importante que pode impactar a operação de uma aplicação de redes é a perda de pacotes. Vamos analisar como ele pode ocorrer?
+ 
+•	Se a intensidade de tráfego for próxima a zero, as chegadas de pacotes serão poucas e bem espaçadas, sendo improvável que um pacote que esteja chegando encontre outro na fila. Com isso, o atraso de fila médio será próximo a zero e todos os pacotes serão processados, sem perdas.
+ 
+•	Agora, imagine a situação na qual a intensidade de tráfego é próxima da capacidade de transmissão. Com certeza, haverá intervalos de tempo em que a velocidade de chegada excederá a capacidade de transmissão (por causa das variações na taxa de chegada do pacote) e uma fila será formada durante esses períodos.
+ 
+•	Se você aumentar a taxa de chegada do pacote o suficiente, de forma que a intensidade do tráfego exceda capacidade de transmissão, verá a fila aumentar ao longo do tempo.
+ 
+•	Como a capacidade da fila (buffer) é finita, logo um pacote pode chegar ao roteador e encontrar o buffer cheio. Sem espaço disponível para armazená-lo, o roteador terá que descartá-lo, isto é, ele será perdido.
+ 
+•	Um sistema final considera que o fenômeno da perda é um pacote que foi transmitido para o núcleo da rede, sem nunca ter emergido dele no destino.
+ 
+Vamos analisar o impacto da perda na aplicação. Se a aplicação que estiver sendo utilizada não admitir perda, como uma transferência de arquivos, o pacote perdido irá impactar o funcionamento da aplicação e, portanto, esse problema deve ser corrigido, normalmente, retransmitindo o pacote faltante.
+Mas existem aplicações que toleram perda, tipicamente, as aplicações de streaming. Nesse tipo de serviço, se alguns pacotes forem perdidos, a aplicação não terá prejuízos. Sabe por quê? Os pacotes de dados de uma aplicação de streaming carregam, por exemplo, um conjunto de pixels de um dos frames do vídeo. Se esse pacote não chegar, apenas alguns pixels deixarão de ser reproduzidos e dificilmente o usuário perceberá.
+Voltemos ao caso da aplicação que não tolera perda. O desenvolvedor da aplicação precisa implementar alguma técnica de controle de perdas? A resposta é não! Lembra que comentamos que a rede oferece uma infraestrutura de serviços? Então, utilizando a API (socket) correta para a aplicação, os serviços existentes na rede corrigirão a perda de pacotes, assim, o desenvolvedor pode focar na lógica da aplicação porque a rede cuidará da entrega dos pacotes.
+
+Atraso fim a fim
+Anteriormente, comentamos sobre os diversos tipos de atrasos, porém, analisamos de forma isolada, pensando no que ocorre entre um nó e outro. Bom, mas é fácil imaginar que entre os sistemas finais, existem vários equipamentos intermediários (roteadores e switches), por onde o pacote trafegará e terá algum tipo de processamento.
+Portanto, o pacote transitando do sistema final de origem para o de destino terá gaso determinado tempo, que é o atraso fim a fim, ou seja, a soma de todos os atrasos que o pacote ficou sujeito ao longo do caminho.
+Se os atrasos de fila forem desprezíveis, não existirá congestionamento e a aplicação poderá funcionar corretamente. Mas, se os atrasos de fila não forem desprezíveis, os atrasos nos nós se acumulam e resultam em um atraso fim a fim significativo que poderá impactar o funcionamento da aplicação, em especial àquelas que são sensíveis ao atraso.
+
+Saiba Mais
+O programa Traceroute (Tracert, no Windows), disponível em qualquer sistema final, permite que possamos verificar o tempo gasto entre cada roteador no caminho e o tempo no sistema final.
+O usuário especifica um nome de hospedeiro de destino, e o programa envia vários pacotes em direção ao destino. Durante o caminho, esses pacotes passam por vários roteadores. Quando um deles recebe o pacote, envia de volta à origem uma mensagem contendo o nome e o endereço do roteador. Quando o destino recebe o pacote, também envia uma mensagem à origem, que registra o tempo transcorrido entre o envio e o recebimento da mensagem de retorno correspondente.
+A origem registra também o nome e o endereço do roteador, ou do hospedeiro de destino, que retorna a mensagem. Desse modo, a origem pode reconstruir a rota tomada pelos pacotes que vão da origem ao destino e pode determinar os atrasos de ida e volta para todos os roteadores no caminho. Observe a imagem a seguir:
+ 
+Exemplo de uso do Traceroute.
+
+No exemplo mostrado, existem 12 roteadores entre a origem e o destino. Vamos pegar o Roteador 5, que tem o endereço 200.244.19.75. Examinando seus dados, vemos que na primeira das três tentativas, o atraso de ida e volta entre a origem e o roteador foi 17ms. Os atrasos de ida e volta para as duas tentativas seguintes foram 20 e 16ms, e incluem os atrasos que foram abordados, que são o atraso de transmissão, o atraso de propagação, o atraso de processamento do roteador e o atraso de fila.
+Como o atraso de fila varia com o tempo, o atraso de ida e volta do pacote n enviado a um roteador n pode, às vezes, ser maior do que o do pacote n+1 enviado ao roteador n+1. Verificando os tempos apresentados na imagem, é possível verificar que isso ocorreu em alguns momentos.
+Também é fácil verificar a variação de atraso com o Traceroute. Como o programa dispara três pacotes para cada destino, percebemos que dificilmente teremos os três pacotes com o mesmo atraso.
+
+Vazão
+Outra medida de desempenho é a vazão fim a fim. Considere a transferência de um arquivo grande do hospedeiro A para o hospedeiro B. A vazão instantânea a qualquer momento é a taxa (em bits/s) em que o hospedeiro B está recebendo o arquivo. Se o arquivo consistir em F bits e a transferência levar T segundos para o hospedeiro B receber todos os F bits, a vazão média da transferência do arquivo é F/T bits/s.
+
+Comentário
+Para algumas aplicações, como a telefonia via internet, é desejável ter um atraso baixo e uma vazão instantânea acima de algum valor. Para outras aplicações, como transferência de arquivo, o atraso não é um fator importante, mas é recomendado que a vazão seja a mais alta possível.
+A vazão depende não somente das taxas de transmissão dos enlaces ao longo do caminho, mas também do tráfego oriundo de outras sistemas finais. Pode acontecer de um enlace com uma alta taxa de transmissão, como um cabo submarino, ser o gargalo para uma transferência de arquivo, considerando que, no mesmo momento que você está realizando um download, muitos outros tráfegos estão passando pelo mesmo cabo submarino, sobrecarregando o enlace e os equipamentos que controlam a entrada dos dados no enlace.
+ 
+4.	Camadas de protocolo e modelos de serviço
+
+Arquitetura de camadas
+Confira agora os principais pontos sobre arquitetura de camadas.
+Todas as atividades na internet que envolvem duas ou mais entidades remotas que se comunicam são governadas por um protocolo.
+Um protocolo define o formato e a ordem das mensagens trocadas entre duas ou mais entidades comunicantes, bem como as ações realizadas na transmissão e/ou no recebimento de uma mensagem ou outro evento.
+Um protocolo de rede e um protocolo humano são muito semelhantes. Quando nos encontramos com outra pessoa, segundo as regras da boa educação, devemos fazer um cumprimento antes de fazer uma pergunta, ou pedir uma ajuda.
+
+Comentário
+Inicialmente, fazemos um cumprimento, como um “oi” e esperamos receber outro “oi” como resposta, ou, por exemplo, falando um “bom dia” e esperando receber um “bom dia” de volta. A partir desse ponto, podemos perguntar as horas, por exemplo. Ou seja, existem mensagens específicas que enviamos e ações específicas que realizamos em reação às respostas recebidas. Também podemos realizar outros eventos quando a resposta é diferente da esperada.
+O mesmo é válido para as redes de computadores. Para que determinada ação seja realizada entre dois componentes de rede, eles devem utilizar o mesmo protocolo.
+
+Para facilitar o desenvolvimento e evolução das redes, os projetistas de rede organizaram os protocolos, e o hardware e o software de rede que os executam, em camadas.
+Em um modelo de serviço:
+•	Cada protocolo é executado em uma camada.
+•	Cada camada oferece seus serviços à camada acima dela, executando certas ações dentro dela, e utilizando os serviços da camada diretamente abaixo dela.
+•	O ponto de ligação entre uma camada e outra camada é denominado interface.
+O primeiro modelo de camadas
+
+Modelo de referência OSI
+No final dos anos 1970, a Organização Internacional para Padronização (International Organization for Standardization – ISO) propôs que as redes de computadores fossem organizadas em camadas, sendo cada camada responsável por realizar determinado serviço.
+Esse esforço fez surgir um modelo de camadas que ficou conhecido como modelo RM-OSI (Reference Model Open Systems Interconnection), ou simplesmente modelo OSI, utilizado até hoje e composto por sete camadas, numeradas de cima para baixo: aplicação, apresentação, sessão, transporte, rede, enlace e física, conforme mostrado na imagem a seguir. 
+ 
+O modelo de referência OSI.
+Importante ressaltar que o modelo OSI é utilizado como uma referência para o estudo e funcionamento das redes, entretanto, não é utilizado em si, principalmente porque ele não definiu protocolos, mas sim os serviços que cada camada oferece. Vamos detalhar essas camadas?
+
+Aplicação - Nesta camada, residem as aplicações de rede que implementam os serviços de redes, como para transferir arquivos, enviar mensagens, entre outros. Um protocolo de camada de aplicação é executado nos sistemas finais, permitindo que as aplicações executadas nesses sistemas finais possam trocar informações por meio de mensagens.
+
+Apresentação - Nesta camada, provê serviços que permitam às aplicações de comunicação interpretarem o significado dos dados trocados, ou seja, ela é responsável por garantir que sistemas diferentes possam trocar informações, como faz um tradutor. Entre esses serviços estão a compressão, criptografia e a codificação de dados.
+
+Sessão - Nesta camada, há a delimitação e sincronização da troca de dados. É a camada que seria responsável, por exemplo, por permitir que, se você estivesse realizando um download de um arquivo e a conexão caísse, você retomasse a transferência a partir do último ponto de sincronização.
+
+Transporte - Nesta camada, são carregadas mensagens da camada de aplicação entre os sistemas finais, garantindo que todos dados sejam trocados de forma correta, ou seja, sem perda, em ordem, sem sobrecarregar a rede e as máquinas. Um pacote da camada de transporte é denominado segmento.
+
+Rede - Nesta camada, há a responsabilidade por determinar o caminho de um hospedeiro para outro. Para que esse serviço seja possível, os endereços lógicos são definidos na camada de rede, que identificam unicamente uma máquina na rede, e a função de roteamento. Os pacotes da camada de rede são conhecidos como datagramas.
+
+Enlace - Nesta camada, leva-se um pacote, denominado quadro, de um nó ao nó seguinte, no caminho entre origem e destino. Em cada nó, a camada de rede passa o datagrama para a camada de enlace, que fica responsável por encaminhar o pacote de dados até o próximo nó, de forma confiável, ou seja, sem erros.
+
+Físico - Nesta camada, os bits individuais que estão dentro do quadro de um nó para o seguinte são movimentados, transformando-os em algum tipo de sinal adequado a ser transmitido pelo meio de transmissão utilizado, por exemplo, fios de cobre ou fibra ótica.
+
+Arquitetura TCP/IP ou internet
+Arquitetura e internet
+Conforme comentamos, o modelo OSI é um modelo de referência e não é utilizado na prática.
+As redes que utilizamos empregam a arquitetura TCP/IP ou arquitetura internet. Originalmente, a arquitetura TCP/IP emprega quatro camadas (aplicação, transporte, inter-rede e intrarrede). Entretanto, por fins didáticos, utilizaremos um modelo formado por cinco camadas: aplicação, transporte, rede, enlace e físico, como mostra a imagem a seguir. No modelo de cinco camadas, a camada de intrarrede é dividida em camada de enlace e física. Confira!
+ 
+Pilha de protocolos da internet.
+
+Conforme podemos observar, a diferença que temos entre o modelo OSI e a arquitetura de cinco camadas é a ausência das camadas de apresentação e sessão. As funções dessas duas camadas são absorvidas pela camada de aplicação.
+Um detalhe que você deve ter percebido é que, quando falamos do OSI, sempre falamos sobre modelo e agora no TCP/IP estamos usando a expressão arquitetura. Por que essa diferença?
+Essa diferença ocorre pelo fato de o OSI não definir protocolos. Já no TCP/IP, temos um conjunto de protocolos associados, conhecidos como a pilha de protocolos TCP/IP, que nada mais são do que o conjunto de protocolos implementados por todas as camadas da arquitetura.
+A camada de aplicação tem a mesma função da camada do modelo OSI, acrescido das funções da apresentação e sessão. Nessa camada, estão definidos alguns dos principais protocolos utilizados atualmente, como o HTTP (HyperText Transfer Protocolo), DNS (Domain Name Server), SMTP (Simple Mail Transfer Protocolo), entre muitos outros.
+A camada de transporte tem a responsabilidade de garantir a confiabilidade das informações trocadas pelas aplicações. Há dois protocolos de transporte na internet, vejamos a seguir:
+
+TCP
+Provê serviços orientados à conexão para suas aplicações. Alguns serviços são: entrega garantida de mensagens, controle de fluxo (compatibilização das velocidades do remetente e do receptor), controle de congestionamento (uma origem reduz sua velocidade de transmissão quando a rede está congestionada) e garantia da ordem das mensagens.
+
+UDP
+Provê serviço não orientado à conexão para suas aplicações. É um serviço econômico sem controle de fluxo e de congestionamento adequado para as aplicações que toleram perda de pacotes, mas não toleram atrasos.
+
+A camada de rede segue a mesma função da camada de rede do modelo OSI, mas agora são definidos o formato do endereço e as regras de encaminhamento. Essa definição é feita pelo protocolo IP (Internet Protocol).
+As camadas de enlace físicas não são definidas de forma explícita na arquitetura internet, mas elas executam o mesmo papel previsto no modelo OSI. Alguns dos padrões utilizados nessas camadas de enlace são o ethernet, wi-fi e bluetooth.
+
+Encapsulamento
+Conceito de encapsulamento
+Confira a seguir os principais pontos sobre o encapsulamento.
+Para compreender o conceito de encapsulamento, considere uma mensagem da camada de aplicação na máquina emissora que é passada para a camada de transporte. Essa camada pega a mensagem e anexa as informações de cabeçalho de camada de transporte. Essas informações serão usadas pela camada de transporte do lado receptor.
+
+Comentário
+A mensagem da camada de aplicação e as informações de cabeçalho da camada de transporte, juntas, formam o que é chamado de Unidade de Dados de Protocolo, ou PDU (Protocol Data Unit), que, nesse caso, é chamado de segmento da camada de transporte, que encapsula a mensagem da camada de aplicação.
+A camada de transporte então passa o segmento à camada de rede, que adiciona informações de cabeçalho de camada de rede, como endereços de sistemas finais de origem e de destino, criando um datagrama de camada de rede. Este é então passado para a camada de enlace, que adicionará suas próprias informações de cabeçalho e criará um quadro de camada de enlace. Finalmente, os dados são passados para a camada física, que transmite os dados na forma de bits pelo meio físico.
+Em cada camada, um PDU possui campos de cabeçalho e um campo de carga útil. A carga útil é, em geral, um pacote da camada acima. Quando o pacote chega no sistema final destino, o processo de desencapsulamento se inicia. Na extremidade receptora, cada segmento deve ser reconstruído a partir dos datagramas que o compõem. O conceito de encapsulamento está ilustrado na imagem que veremos a seguir.
+Quando um sistema final envia pacotes para outro sistema final, o caminho físico que os dados percorrem é o seguinte:
+ 
+1.	Sentido para baixo na pilha de protocolos de um sistema final emissor.
+2.	Sentido para cima e para baixo nas pilhas de protocolos de um comutador e roteador de camada de enlace que estejam no caminho.
+3.	Depois para cima na pilha de protocolos do sistema final receptor.
+Os roteadores e comutadores de camada de enlace não implementam todas as camadas da pilha de protocolos. Por exemplo, os roteadores da internet são capazes de executar o protocolo IP (da camada 3), mas comutadores de camada de enlace não (só até a camada 2, de enlace). Os hospedeiros implementam todas as cinco camadas.
+ 
+Conceito de encapsulamento.
+
+
+
+
+
+5.	Aspectos da evolução das redes de computadores e a internet
+
+A história da internet
+
+Anos 1960
+No início da década de 1960, a rede de telefonia, que usa comutação de circuitos para transmitir informações de uma origem a um destino, era a rede de comunicação dominante no mundo. A comutação de circuitos foi escolhida, pois a voz é transmitida a uma taxa constante entre os pontos. Com a importância cada vez maior dos computadores no início da década de 1960, foi considerada a questão de como interligar computadores para que pudessem ser compartilhados entre usuários geograficamente dispersos.
+A comutação de pacotes foi inventada como uma alternativa poderosa e eficiente à comutação de circuitos. O programa de ciência de computadores na ARPA (Advanced Research Projects Agency, ou Agência de Projetos de Pesquisa Avançada), nos Estados Unidos, publicou um plano geral para a ARPAnet, a primeira rede de computadores por comutação de pacotes e uma ancestral direta da internet pública de hoje.
+Em 1969, foi instalado o primeiro comutador de pacotes na UCLA (Universidade da Califórnia em Los Angeles). O primeiro protocolo fim a fim entre sistemas finais da ARPAnet foi o protocolo de controle de rede (Network Control Protocol – NCP). Com um protocolo fim a fim à disposição, a escrita de aplicações tornou-se possível, e em 1972, foi escrito o primeiro programa de e-mail.
+
+Anos 1970
+O trabalho de interconexão de redes realizado pela DARPA (Defense Advanced Research Projects Agency, ou Agência de Projetos de Pesquisa Avançada de Defesa), criou uma rede de redes e foi realizado por Vinton Cerf e Robert Kahn.
+Comentário
+Esses princípios de arquitetura foram incorporados ao TCP. As primeiras versões desse protocolo combinavam uma entrega sequencial confiável de dados via retransmissão por sistema final (que ainda faz parte do TCP de hoje) com funções de envio (que hoje são desempenhadas pelo IP). Os três protocolos fundamentais da internet que temos hoje — TCP, UDP e IP — estavam conceitualmente disponíveis no final da década de 1970.
+
+Anos 1980
+Saiba Mais
+Em 1983, o TCP/IP foi adotado oficialmente como o novo padrão de protocolo de máquinas para a ARPAnet (em substituição ao protocolo NCP). Foi desenvolvido o sistema de nomes de domínios (DNS) utilizado para mapear nomes da internet fáceis de entender.
+
+Anos 1990
+Na década de 1990, a ARPAnet, a progenitora da internet, deixou de existir. O principal evento foi o surgimento da World Wide Web, que levou a internet para os lares e as empresas de milhões de pessoas no mundo inteiro. A web serviu como plataforma para a habilitação e a disponibilização de centenas de novas aplicações, como sites de busca (por exemplo, Google), comércio pela internet (por exemplo, Amazon, eBay) e redes sociais (por exemplo, Facebook).
+A web foi inventada por Tim Berners-Lee, entre 1989 e 1991, no CERN (European Center for Nuclear Physics, ou Centro Europeu para Física Nuclear), com base em ideias originadas de trabalhos sobre hipertexto.
+Em 1995, empresas começaram a operar servidores e a realizar transações comerciais pela web. A segunda metade da década de 1990 foi um período de tremendo crescimento e inovação, com grandes corporações e milhares de novas empresas criando produtos e serviços para a internet.
+De 1995 a 2001, a internet realizou uma viagem vertiginosa pelos mercados financeiros. Antes mesmo de se mostrarem lucrativas, centenas de novas empresas faziam suas ofertas públicas iniciais de ações e começavam a ser negociadas em bolsas de valores. Muitas empresas eram avaliadas em bilhões de dólares, sem ter nenhum fluxo significativo de receita. As ações da internet sofreram uma queda também vertiginosa entre 2000 e 2001, e muitas novas empresas fecharam.
+
+Anos 2000 até o presente
+Desde o início do milênio, vimos a implementação do acesso à internet por banda larga nos lares – modems a cabo, DSL, FTTH. Esse acesso à internet de alta velocidade possibilitou a aparição de várias aplicações de vídeo, como a distribuição de vídeo gerado pelo usuário (por exemplo, YouTube), fluxo contínuo por demanda de filmes e shows de televisão (por exemplo, Netflix) e videoconferência entre várias pessoas (por exemplo, Skype).
+
+Comentário
+A onipresença cada vez maior das redes Wi-Fi e de telefonia celular 4G e 5G públicas está possibilitando permanecer constantemente conectado enquanto se desloca, e também permitindo novas aplicações inerentes à localização.
+O número de dispositivos sem fio conectados ultrapassou o número de dispositivos com fio. Muitas empresas de comércio na internet agora estão rodando suas aplicações na “nuvem” — como na EC2 da Amazon, ou na Azure da Microsoft.
+
+Uma breve história da internet
+A linha do tempo da história da internet, a seguir, mostra como a vasta rede de hoje evoluiu a partir do conceito inicial.
+
+Década de 60
+Vamos agora conferir os principais acontecimentos deste período.
+
+1965
+Ano em que dois computadores no MIT Lincoln Lab se comunicam usando a tecnologia de comutação de pacotes.
+
+1968
+Ano em que Beranek and Newman Inc. (BBN) revela a versão final das especificações do Interface Message Processor (IMP). BBN ganha contrato com a ARPANET.
+
+1969
+Ano em que, em 29 de outubro, o Centro de Medição de rede da UCLA, o Stanford Research Institute (SRI), a Universidade da Califórnia-Santa Barbara e a Universidade de Utah instalam nós. A primeira mensagem é "LO", que foi uma tentativa do estudante Charles Kline de "LOGIN" no computador SRI da universidade. No entanto, a mensagem não pôde ser concluída porque o sistema SRI travou.
+
+Década de 70
+Vamos agora conferir os principais acontecimentos deste período.
+
+1972
+Ano em que Ray Tomlinson da BBN introduz o e-mail de rede. O grupo de trabalho da internet (INWG) se forma para atender à necessidade de estabelecer protocolos padrão.
+
+1973
+Ano em que a rede global se torna uma realidade quando a University College of London (Inglaterra) e o Royal Radar Establishment (Noruega) se conectam à ARPANET. O termo internet nasceu.
+
+1974
+Ano em que nasce o primeiro Provedor de Serviços de Internet (ISP) com a introdução de uma versão comercial da ARPANET, conhecida como Telenet. Vinton Cerf e Bob Kahn (a dupla considerada por muitos como os pais da internet) publicam "A Protocol for Packet Network Interconnection", que detalha o design do TCP.
+
+1976
+Ano em que a rainha Elizabeth II aperta o botão “enviar” em seu primeiro e-mail.
+
+1979
+Ano em que são usados formulários USENET para hospedar notícias e grupos de discussão.
+
+Década de 80
+Vamos agora conferir os principais acontecimentos deste período.
+
+1981
+Ano em que a National Science Foundation (NSF) forneceu uma doação para estabelecer a Computer Science Network (CSNET) para fornecer serviços de rede para cientistas da computação da universidade.
+
+1982
+Ano em que Transmission Control Protocol (TCP) e Internet Protocol (IP), como o conjunto de protocolos, comumente conhecido como TCP/IP, surgem como protocolo para ARPANET. Isso resulta na definição incipiente da internet como internet TCP/IP conectada. O TCP/IP continua sendo o protocolo padrão para a internet.
+
+1983
+Ano em que o Domain Name System (DNS) estabelece o conhecido sistema .edu, .gov, .com, .mil, .org, .net e .int para nomear sites. Isso é mais fácil de lembrar do que a designação anterior para sites, como 123.456.789.10.
+
+1984
+Ano em que William Gibson, autor de Neuromancer, é o primeiro a usar o termo "ciberespaço".
+
+1985
+Ano em que Symbolics.com, o site da Symbolics Computer Corp. em Massachusetts, torna-se o primeiro domínio registrado.
+
+1986
+Ano em que o NSFNET da National Science Foundation fica on-line para centros de supercomputadores conectados a 56.000 bits por segundo – a velocidade de um modem de computador dial-up típico. Com o tempo, a rede acelera e as redes regionais de pesquisa e educação, apoiadas em parte pela NSF, são conectadas ao backbone NSFNET, expandindo efetivamente a internet em todos os Estados Unidos. A NSFNET era essencialmente uma rede de redes que conectava usuários acadêmicos junto com a ARPANET.
+
+1987
+Ano em que o número de hosts na internet ultrapassa 20.000. A Cisco envia seu primeiro roteador.
+
+1989
+Ano em que World.std.com torna-se o primeiro provedor comercial de acesso discado à internet.
+
+Década de 90
+Vamos agora conferir os principais acontecimentos deste período.
+
+1990
+Ano em que Tim Berners-Lee, cientista do CERN, desenvolve HyperText Markup Language (HTML). Essa tecnologia continua a ter um grande impacto em como navegamos e visualizamos a internet hoje.
+
+1991
+Ano em que o CERN apresenta a World Wide Web ao público.
+
+1992
+Ano em que os primeiros áudio e vídeo são distribuídos pela internet. A frase "navegar na internet" é popularizada.
+
+1993
+Ano em que o número de sites chega a 600 e a Casa Branca e as Nações Unidas ficam on-line. Marc Andreesen desenvolve o navegador Web Mosaic na Universidade de Illinois, Champaign-Urbana. O número de computadores conectados à NSFNET cresce de 2.000 em 1985 para mais de 2 milhões em 1993. A National Science Foundation lidera um esforço para delinear uma nova arquitetura de internet que apoiaria o crescente uso comercial da rede.
+
+1994
+Ano em que nasce a Netscape Communications. A Microsoft cria um navegador da web para Windows 95. Também em 1994, Yahoo! é criado por Jerry Yang e David Filo, dois estudantes de engenharia elétrica da Universidade de Stanford. O site foi originalmente chamado de "Guia de Jerry e David para a World Wide Web". A empresa foi posteriormente incorporada em março de 1995.
+
+1995
+Ano em que Compuserve, America Online e Prodigy começam a fornecer acesso à internet. Amazon.com, Craigslist e eBay entram em operação. O backbone original da NSFNET é desativado quando a transformação da internet em uma empresa comercial está em grande parte concluída. 
+O primeiro site de namoro on-line, Match.com, é lançado.
+
+1996
+Ano em que a guerra dos navegadores, principalmente entre os dois principais players, Microsoft e Netscape, esquenta. CNET compra tv.com por US$ 15.000.
+ 
+Uma animação 3D apelidada de "The Dancing Baby" se torna um dos primeiros vídeos virais.
+
+1997
+Ano em que a Netflix é fundada, por Reed Hastings e Marc Randolph, como uma empresa que envia DVDs aos usuários pelo correio.
+ Os fabricantes de PCs podem remover ou ocultar o software de internet da Microsoft em novas versões do Windows 95, graças a um acordo com o Departamento de Justiça. A Netscape anuncia que seu navegador será gratuito.
+
+1998
+Ano em que nasce o mecanismo de busca Google, mudando a forma como os usuários se relacionam com a internet.
+ Introduzido o Protocolo de Internet versão 6, para permitir o crescimento futuro de endereços de internet. O protocolo mais usado até então é a versão 4. O IPv4 usa endereços de 32 bits, permitindo 4,3 bilhões de endereços exclusivos; O IPv6, com endereços de 128 bits, permitirá 3,4 x 1038 endereços únicos, ou 340 trilhões de trilhões de trilhões.
+
+1999
+Ano em que a AOL compra a Netscape. O compartilhamento de arquivos ponto a ponto se torna uma realidade à medida que o Napster chega à internet, para grande desgosto da indústria da música.
+Década de 2000 - 2010
+Vamos agora conferir os principais acontecimentos deste período.
+
+2000
+Ano em que a bolha das pontocom estoura. Sites como o Yahoo! e eBay são atingidos por um ataque de negação de serviço em larga escala, destacando a vulnerabilidade da internet. AOL funde-se com a Time Warner.
+2001
+Ano em que um juiz federal fecha o Napster, determinando que ele deve encontrar uma maneira de impedir que os usuários compartilhem material protegido por direitos autorais antes que ele possa voltar a ficar on-line.
+
+2003
+Ano em que o worm “SQL Slammer” se espalhou pelo mundo em apenas 10 minutos. Myspace, Skype e o navegador Safari.
+ A plataforma de publicação de blogs WordPress é lançada.
+
+2004
+Ano em que o Facebook fica on-line e a era das redes sociais começa. Mozilla apresenta o navegador Mozilla Firefox.
+
+2005
+Ano em que é lançado o YouTube.com. O site de notícias sociais Reddit também é fundado.
+
+2006
+Ano em que AOL muda seu modelo de negócios, oferecendo a maioria dos serviços gratuitamente e contando com publicidade para gerar receita. O Fórum de Governança da internet se reúne pela primeira vez.
+ 
+Lançamento do Twitter. O fundador da empresa, Jack Dorsey, envia o primeiro tweet: “just setting up my twitter”, ou em português: “apenas configurando meu twitter”.
+
+2009
+Ano em que a internet completa 40 anos.
+
+Década de 2010 - 2020
+Vamos agora conferir os principais acontecimentos deste período.
+
+2010
+Ano em que o Facebook atinge 400 milhões de usuários ativos e os sites de mídia social Pinterest e Instagram são lançados.
+
+2011
+Ano em que Twitter e Facebook desempenham um grande papel nas revoltas do Oriente Médio.
+
+2012
+Ano em que o governo do presidente Barack Obama anuncia sua oposição a grandes partes da Lei Stop Online Piracy e da Protect Intellectual Property Act, que teriam promulgado novas regras amplas exigindo que os provedores de serviços de internet policiassem conteúdo protegido por direitos autorais. O esforço bem-sucedido para impedir o projeto de lei, envolvendo empresas de tecnologia como Google e organizações sem fins lucrativos, incluindo Wikipedia e Electronic Frontier Foundation, é considerado uma vitória para sites como o YouTube, que dependem de conteúdo gerado pelo usuário, bem como "uso justo" na internet.
+
+2013
+Ano em que Edward Snowden, ex-funcionário da CIA e contratado da Agência de Segurança Nacional (NSA), revela que a NSA tinha um programa de monitoramento capaz de interceptar as comunicações de milhares de pessoas, incluindo cidadãos dos EUA.
+ 51% dos adultos norte-americanos relatam que fazem transações bancárias on-line, de acordo com uma pesquisa realizada pelo Pew Research Center.
+
+
+
+2015
+Ano em que Instagram, o site de compartilhamento de fotos, atinge 400 milhões de usuários, superando o Twitter, que chegaria a 316 milhões de usuários em meados do mesmo ano.
+
+2016
+Ano em que o Google lança o Google Assistant, um programa de assistente pessoal ativado por voz, marcando a entrada da gigante da internet no mercado de assistente computadorizado "inteligente". O Google se junta ao Alexa da Amazon, Siri da Apple e Cortana da Microsoft.
+
+2018
+Ano em que há um aumento significativo de dispositivos habilitados para internet. Um aumento na internet das Coisas (IoT) vê cerca de sete bilhões de dispositivos até o final do ano.
+
+2019
+Ano em que redes de quinta geração (5G) são lançadas, permitindo conexão mais rápida à internet em alguns dispositivos sem fio.
+
+De 2020 a 2022
+Vamos agora conferir os principais acontecimentos deste período.
+
+2021
+Ano em que se completa 4,66 bilhões (mais especificamente, em janeiro de 2021) de pessoas conectadas à internet. Isso é mais da metade da população global.
+
+
+
+2022
+Ano em que a internet via satélite em órbita baixa da Terra está mais próxima da realidade. No início de janeiro de 2022, a SpaceX lança mais de 1.900 satélites Starlink no total. A constelação agora está fornecendo serviço de banda larga em áreas selecionadas ao redor do mundo.
+
+Considerações finais
+Ao longo do nosso estudo, foi possível verificarmos alguns conceitos iniciais relacionados às redes de computadores e à organização da internet. Descobrimos que a internet é composta de sistemas finais, redes de acesso e núcleo da rede, e que a internet global é uma rede de redes, composta de ISPs de níveis mais altos e mais baixos.
+Foi possível entender quais são os parâmetros de avaliação das redes e quais são as causas de atrasos e perdas de pacotes em uma rede de comutação de pacotes, além de compreender como esses parâmetros influenciam no funcionamento das aplicações de redes.
+Também descobrimos que as redes são organizadas em camadas de protocolo e modelos de serviço, princípios fundamentais de arquitetura de redes. Por fim, vimos um pouco sobre a história das redes de computadores.
+
+Explore +
+Confira as indicações que separamos para você!
+ Pesquise na internet sobre a história da ARPAnet e o funcionamento das redes. Sugerimos alguns vídeos no YouTube, com legendas em português, como:
+ 
+ARPANET- the team behind the internet
+ Computer Networks: Crash Course Computer Science #28
+ Inside a Google data center
+
+
+
+Referências
+FOROUZAN, B. A. Comunicação de dados e redes de computadores. 4. ed. São Paulo: McGraw-Hill, 2008.
+ 
+KUROSE, J. F.; ROSS, K. W. Redes de computadores e a internet: uma abordagem top-down. 6. ed. São Paulo: Pearson, 2013.
+ 
+TANENBAUM, A. S.; WETHERALL, D. Redes de computadores. 5. ed. São Paulo: Pearson, 2011.
+ 
+ZIMMERMANN, K. A.; EMSPAK, J. Internet history timeline: ARPANET to the World Wide Web. Live Science, 08 abr. 2022. Consultado na Internet em: 01 nov. 2022.
+
