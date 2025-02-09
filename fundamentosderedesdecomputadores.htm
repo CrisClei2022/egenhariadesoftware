@@ -545,7 +545,43 @@ d) i - protocolos; ii - interfaces, iii - camadas.
 
 <br>
 <!--  -->
-<h4>  Modelo de Referência Osi: Apresentação, Sessão, Transporte, Rede, Enlace e Físico  </h4> 
+<h4>  Modelo de Referência Osi: Apresentação, Aplicação, Sessão, Transporte, Rede, Enlace e Físico  </h4> 
+
+No final dos anos 1970, a Organização Internacional para Padronização 
+(International Organization for Standardization – ISO) propôs que as 
+redes de computadores fossem organizadas em camadas, criando o RM-OSI 
+(Reference Model Open Systems Interconnection), onde foi definido os 
+serviços que cada camada oferece.
+
+💻 Aplicação - Nesta camada, residem as aplicações de rede que implementam os serviços de redes, como para transferir arquivos, enviar mensagens, entre outros. Um protocolo de camada de aplicação é executado nos sistemas finais, permitindo que as aplicações executadas nesses sistemas finais possam trocar informações por meio de mensagens.
+
+🖨️ Apresentação - Nesta camada, provê serviços que permitam às aplicações de comunicação interpretarem o significado dos dados trocados, ou seja, ela é responsável por garantir que sistemas diferentes possam trocar informações, como faz um tradutor. Entre esses serviços estão a compressão, criptografia e a codificação de dados.
+
+💾 Sessão - Nesta camada, há a delimitação e sincronização da troca de dados. É a camada que seria responsável, por exemplo, por permitir que, se você estivesse realizando um download de um arquivo e a conexão caísse, você retomasse a transferência a partir do último ponto de sincronização.
+
+📦 Transporte - Nesta camada, são carregadas mensagens da camada de aplicação entre os sistemas finais, garantindo que todos dados sejam trocados de forma correta, ou seja, sem perda, em ordem, sem sobrecarregar a rede e as máquinas. Um pacote da camada de transporte é denominado segmento.
+
+🗺️ Rede - Nesta camada, há a responsabilidade por determinar o caminho de um hospedeiro para outro. Para que esse serviço seja possível, os endereços lógicos são definidos na camada de rede, que identificam unicamente uma máquina na rede, e a função de roteamento. Os pacotes da camada de rede são conhecidos como datagramas.
+
+🔎 Enlace - Nesta camada, leva-se um pacote, denominado quadro, de um nó ao nó seguinte, no caminho entre origem e destino. Em cada nó, a camada de rede passa o datagrama para a camada de enlace, que fica responsável por encaminhar o pacote de dados até o próximo nó, de forma confiável, ou seja, sem erros.
+
+🚛 Físico - Nesta camada, os bits individuais que estão dentro do quadro de um nó para o seguinte são movimentados, transformando-os em algum tipo de sinal adequado a ser transmitido pelo meio de transmissão utilizado, por exemplo, fios de cobre ou fibra ótica.
+
+
+A seguir temos o fluxo de trabalho de uma transportadora, classfique cada etapa como se fosse uma camada de rede executando o serviço:
+
+i - Cliente faz pedido.
+ii - Documentos são traduzidos e segurados.
+iii - Sistema registra progresso da entrega.
+iv - Logística organiza volumes.
+v - Roteirização define melhor caminho.
+vi - Transportadores movem fisicamente os pacotes.
+vii - Centros de distribuição verificam integridade.
+
+a) i - Físico; ii - Apresentação; iii - Sessão; iv - Transporte; v - Rede; vi - Enlace; vii - Aplicação.
+b) i - Aplicação; ii - Apresentação; iii - Sessão; iv - Transporte; v - Rede; vi - Físico; vii - Enlace. x
+c) i - Aplicação; ii - Apresentação; iii - Sessão; iv - Transporte; v - Rede; vi - Enlace; vii - Físico.
+d) i - Aplicação; ii - Apresentação; iii - Transporte; iv - Sessão; v - Rede; vi - Enlace; vii - Físico.
 
 
 <br>
