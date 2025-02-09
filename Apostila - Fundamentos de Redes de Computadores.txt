@@ -292,15 +292,24 @@ Protocolos de Transporte
 O TCP e UDP são  específicos para a arquitetura de protocolos TCP/IP, que é a utilizada na Internet mundial, porém em outras redes podem existir outros protocolos de transporte além do TCP e UDP. 
 
 TCP
-Provê serviços orientados à conexão para suas aplicações. Alguns serviços são: entrega garantida de mensagens, controle de fluxo (compatibilização das velocidades do remetente e do receptor), controle de congestionamento (uma origem reduz sua velocidade de transmissão quando a rede está congestionada) e garantia da ordem das mensagens.
+🐢 Provê serviços orientados à conexão para suas aplicações. Alguns serviços são: entrega garantida de mensagens, controle de fluxo (compatibilização das velocidades do remetente e do receptor), controle de congestionamento (uma origem reduz sua velocidade de transmissão quando a rede está congestionada) e garantia da ordem das mensagens.
 
 UDP
-Provê serviço não orientado à conexão para suas aplicações. É um serviço econômico sem controle de fluxo e de congestionamento adequado para as aplicações que toleram perda de pacotes, mas não toleram atrasos.
+🐎 Provê serviço não orientado à conexão para suas aplicações. É um serviço econômico sem controle de fluxo e de congestionamento adequado para as aplicações que toleram perda de pacotes, mas não toleram atrasos.
+
+Considere uma aplicação que oferece a transmissão de videos ao vivo com uma função simultanea de troca de mensagens entre os expectadores.
+
+Seria possível usar tanto o protocolo TCP quanto UDP para diferentes funcionalidades na mesma aplicação?
+
+a) Não, pois cada aplicação pode utilizar somente um protocolo de transporte.
+b) Sim, pois o protocolo TCP pode perder alguns frames, mas evitaria atrasos. Enquanto que o protocolo UDP garantiria que as mensagens chegassem por completo e na ordem correta.
+c) Sim, pois o protocolo UDP pode perder alguns frames, mas evitaria atrasos. Enquanto que o protocolo TCP garantiria que as mensagens chegassem por completo e na ordem correta.
+d) Sim, pois o protocolo TCP seria ideal para transmissões mais rápidas onde alguma perda é aceitável. Enquanto que o protocolo UDP seria melhor para transmissões que precisam ser confiáveis e ordenadas.
 
 
-Arquitetura TCP/IP ou internet
+Arquitetura TCP/IP ou Arquitetura Internet
 
-Arquitetura TCP/IP ou arquitetura internet, tem como principal característica um conjuntos de protocolos associados, conhecidos como a pilha de protocolos TCP/IP, sendo implementados por todas as camadas dessa arquitetura.
+Essa arquitetura tem como principal característica ser formada por um conjuntos de protocolos associados, são conhecidos como a pilha de protocolos TCP/IP e são implementados por todas as camadas dessa arquitetura.
 
 Originalmente, a arquitetura TCP/IP emprega quatro camadas (aplicação, transporte, inter-rede e intrarrede). 
 
