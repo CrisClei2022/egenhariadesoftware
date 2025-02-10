@@ -326,6 +326,7 @@ A camada de rede segue a mesma função da camada de rede do modelo OSI, mas ago
 As camadas de enlace físicas não são definidas de forma explícita na arquitetura internet, mas elas executam o mesmo papel previsto no modelo OSI. Alguns dos padrões utilizados nessas camadas de enlace são o ethernet, wi-fi e bluetooth.
 
 
+Nivel de Camadas
 
 Camadas Altas (Camadas 5-7):
 
@@ -339,8 +340,8 @@ Inclui as camadas Física, Enlace, Rede e Transporte.
 Lidam com a transmissão física dos dados.
 São as camadas mais próximas do hardware.
 
-Camadas altas: se preocupam com "O QUE" está sendo enviado
-Camadas baixas: se preocupam com "COMO" enviar
+Camadas altas: se preocupam com "O QUE" está sendo enviado.
+Camadas baixas: se preocupam com "COMO" enviar.
 
 
 
@@ -355,13 +356,16 @@ Roteador (Sistema Intermediário):
 
 Processa apenas até a camada de rede.
 Não precisa entender o conteúdo da mensagem, apenas para onde ela deve ir.
-Exemplo: Quando um email é enviado, o roteador só precisa ler o endereço IP de destino (aplicado pela camada de rede) para encaminhar corretamente, não precisa saber que é um email (definido na camada de aplicação).
+Exemplo: Quando um email é enviado, o roteador só precisa ler o endereço IP 
+de destino (aplicado pela camada de rede) para encaminhar corretamente, 
+não precisa saber que é um email (definido na camada de aplicação).
 
 Em um Servidor (Sistema Final):
 
-Processa todas as camadas, da física até a aplicação
-Exemplo: Quando você acessa um site, o servidor web precisa desempacotar a mensagem desde a camada física até chegar na requisição HTTP na camada de aplicação
-O servidor é o destino final da comunicação, então ele precisa processar o conteúdo completo
+Processa todas as camadas, da física até a aplicação.
+Exemplo: Quando você acessa um site, o servidor web precisa desempacotar a 
+mensagem desde a camada física até chegar na requisição HTTP na camada de aplicação.
+O servidor é o destino final da comunicação, então ele precisa processar o conteúdo completo.
 
 
 
