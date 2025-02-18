@@ -1,0 +1,886 @@
+
+⬛ Solução Estruturada
+
+O computador não tem discernimento para julgar culturalmente se algo é certo ou errado. No entanto, ele pode ser instruído para tomar decisões lógicas, baseadas em critérios objetivos, e seguir instruções ordenadas. A isso, chamamos solução estruturada.
+
+Uma analogia simples para entender esse ponto é pensar em uma receita de bolo. O computador, assim como quem segue estritamente a receita, não tem julgamento sobre se o bolo “é bom ou ruim” do ponto de vista cultural ou moral. Ele apenas executa as etapas na ordem indicada: separar os ingredientes, misturar, assar etc. Caso a receita seja bem estruturada (com passos claros e objetivos), o resultado (o bolo) tende a sair conforme o esperado. Da mesma forma, na programação, uma solução estruturada é composta por instruções precisas e lógicas, que são seguidas sem qualquer análise de valor fora desses critérios.
+
+Propor uma solução estruturada para um problema consiste em elaborar uma sequência de passos a serem dados, de forma que, ao seguir esta sequência, exista uma resposta coerente para esse problema.
+
+Já que os computadores podem seguir instruções adequadamente programadas para realizar certas tarefas, podemos concluir que eles têm comportamento previsível. Este fato nos permite prever o que determinado programa fará ao ser executado, caso tenhamos acesso ao conjunto de instruções que o gerou.
+
+Aplicar o pensamento computacional é o primeiro passo para conseguir instruir o computador a executar determinada tarefa. O pensamento computacional vai permitir que você proponha a solução de determinado problema de forma que o computador possa executá-la.
+
+
+⬛ Pensamento Computacional - Grover e Pea (2013)
+
+De acordo com Grover e Pea (2013), o pensamento computacional tem nove elementos que o levam a atender alunos interdisciplinarmente, além de avaliar seu desempenho. São eles:
+
+◆ Abstração e reconhecimento de padrões = simplificar tarefas complexas;
+
+◆ Processamento sistemático da informação = padronizar, organizar e manipular dados seguindo passos rigorosos e ordenados;
+
+◆ Noções de controle de fluxo em algoritmos = ordem em que instruções são executadas através de passos coerentes e produtivos;
+
+◆ Decomposição de problemas estruturados = dividir tarefas complexas em partes menores e gerenciáveis;
+
+◆ Sistema de símbolos e representações = variáveis, operadores e sinais;
+
+◆ Pensamento iterativo, recursivo e paralelo = repetições (iteração), chamar o próprio procedimento (recursão) ou executar etapas simultaneamente (paralelo);
+
+◆ Lógica condicional = ações dinâmicas conforme condições sejam verdadeiras ou falsas;
+
+◆ Eficiência e restrições de desempenho = resultados rapidos com menos recursos;
+
+◆ Depuração e detecção de erro sistemático = rastrear falhas e corrigi-las de modo sistemático, testando partes do código.
+
+
+⬛ Pensamento Computacional - Brackmann (2017)
+
+De acordo com Brackmann (2017), o pensamento computacional tem quatro pilares para a resolução de problemas. São eles:
+
+◆ Decomposição
+
+A decomposição consiste em dividir o problema inicial em partes menores, permitindo que cada parte menor seja mais facilmente resolvida. De maneira geral, problemas que não estão decompostos têm sua resolução mais difícil de enxergar e desenvolver.
+
+
+◆ Reconhecimento de padrões
+
+Ao decompor o problema em partes menores, é possível aumentar a atenção aos detalhes e perceber que algumas destas partes menores já são conhecidas ou têm sua solução conhecida. O reconhecimento de padrões se caracteriza por identificar repetições ou regras de recorrência, aumentando a chance de se conhecer alguma solução para problemas similares.
+
+
+◆ Abstrações
+
+A abstração consiste na filtragem e classificação dos dados, concentrando a atenção no que realmente é importante (BRACKMANN, 2017). Ela pode ser vista como o principal dos pilares, porque será utilizada em diversos momentos. Ao concentrar-se nos dados realmente importantes, a abstração permite que decisões sejam tomadas com maior qualidade.
+
+
+◆ Algoritmos
+
+Os algoritmos são procedimentos para resolver um problema com as ações a serem executadas e a ordem em que elas devem acontecer. Na vida acadêmica, aprendemos diversos algoritmos no ensino fundamental e no ensino médio, como algoritmos para executar as operações básicas (soma, subtração, multiplicação e divisão).
+
+
+
+⬛ Tipos de Dados, Expressões, Operadores e Tabela Verdade
+
+◆ Raciocínio lógico
+
+Ao longo da vida acadêmica de um aluno, ao passar pelo ensino fundamental e ensino médio, é comum que ele se veja tentando reconhecer padrões em boa parte do tempo. Aprende-se a resolução de exercícios de Ciências Exatas, por exemplo, a partir da repetição de alguns passos a problemas similares. Isto é, ao se deparar com um problema de determinado tipo, o aluno reconhece que este obstáculo, para o qual ele já tem uma solução, encaixa-se em determinado padrão. Observe a sequência a seguir:
+
+2, 4, 6, 8, 10, X.
+
+O próximo termo é (12), já que essa sequência tem como regra listar os números pares. Vamos agora treinar um pouco mais as suas habilidades para o reconhecimento de padrões e estimular seu raciocínio matemático. Vejamos:
+
+◆ Exemplo
+Na sequência de números ímpares: 1, 3, 5, 7, 9, ....
+O próximo numero seria: 11.
+
+Na sequência de números: 1, 6, 12, 19, 27, ....
+Repare que a diferença entre dois elementos sempre aumenta uma unidade a cada par. O primeiro par (1 e 6) tem diferença 5. O próximo par (6 e 12) tem diferença 6. Como o par (19 e 27) tem diferença 8, a próxima diferença será 9. Assim, 27 + 9 = 36.
+
+
+
+2. Ferramentas de soluções
+
+⬛ Conceitos
+
+Conheça agora algumas ferramentas que podem ajudar a representar soluções, permitindo uma melhor organização do seu raciocínio e aplicação do pensamento computacional que você está desenvolvendo.
+
+Sabemos que os computadores são muito bons em executar tarefas, e se organizarmos nossas soluções em passos e condições lógicas, os computadores poderão ser instruídos a segui-los e encontrar respostas de forma rápida e precisa. Dessa forma, vamos aprender, neste módulo, um pouco mais sobre algoritmos e fluxogramas, dois conceitos importantes que vão facilitar a nossa vida com os computadores.
+
+Como já vimos, algoritmos são procedimentos para resolver um problema com as ações a serem executadas e a ordem em que elas devem acontecer. Um exemplo bem fácil de identificar é a receita para preparação de um macarrão instantâneo.
+
+Neste caso, fizemos uma sucessão de passos simples, sem nos preocupar com verificações que poderiam ser feitas para aumentar o nível de detalhamento. Poderíamos, por exemplo, acrescentar a verificação se o gás está chegando adequadamente ao fogão. Poderíamos, também, verificar se o macarrão realmente está pronto após os 3 minutos. É possível fazer várias adaptações para aumentar o nível de detalhamento. Mas a ideia principal é criar uma sequência de passos que oriente a execução da tarefa. Vamos observar outro exemplo simples sobre divisibilidade.
+
+
+◆ Exemplo
+
+O critério para verificar se um número é par ou não é ser divisível por 2. Poderíamos pensar que ser divisível significa ter resto zero na divisão. Logo, um possível algoritmo para responder a um amigo se o número que ele falou é divisível por 2 ou não vem a seguir:
+ 
+• Perguntar ao seu amigo o número que ele quer testar;
+• Ouvir a resposta dele;
+• Calcular o resto da divisão do número informado por 2;
+• Se o resto da divisão do número informado por 2 for zero, então: responder ao amigo que o número é par;
+• Se não for: responder ao amigo que o número é ímpar. 
+
+Um algoritmo que esteja organizado, como o exemplo que acabamos de ver, já está bem próximo do que precisamos fazer para instruir corretamente um computador a executar a tarefa.
+
+⬛ Fluxograma
+
+O fluxograma é outra ferramenta bem útil para a representação de uma solução, e pode ser entendido como a representação gráfica de um algoritmo. É como se pudéssemos fazer um esquema, com regras simples, que represente a sequência de passos e condições que compõem um algoritmo. Fluxogramas também podem ser usados para representar sistemas ou processos. Existem diversas ferramentas para a criação de fluxogramas, tanto locais como on-line. Podemos citar o Bizagi. Porém, até mesmo usando o Microsoft Word ou o Microsoft Powerpoint é possível criar fluxogramas.
+
+Para utilizar corretamente o fluxograma, é necessário entender os seus principais componentes:
+
+⬛ Como usar o Bizagi
+
+Assista ao vídeo e aprenda a utilizar corretamente o Bizagi.
+
+O algoritmo que usamos para responder a um amigo, se o número que ele falou é divisível por 2 ou não, pode ser representado pelo seguinte fluxograma:
+
+Considere o fluxograma a seguir:
+
+◆ Exemplo
+
+Supondo que o usuário informe, no passo 3, o número 125. Qual será o resultado deste fluxograma? O número não é um quadrado perfeito”, uma vez que 125 não tem raiz inteira. Assim, na decisão 5, o caminho será da seta “não”.
+
+3. Pseudocódigo e Portugol Studio
+
+◆ Pseudocódigo
+
+Conheça agora dois importantes aliados na sua iniciação à programação. Grosso modo, chamamos de programar a ação do programador ao criar, usando alguma linguagem de programação, um conjunto de instruções que um computador consiga executar. Tanto o pseudocódigo como o Portugol Studio permitirão que você se aproxime ainda mais da fluência na programação.
+
+Pseudocódigo é uma linguagem artificial e informal que ajuda programadores a desenvolver algoritmos. O pseudocódigo parece com a forma natural que usamos para nos expressar, mas também tem semelhanças com uma linguagem de programação para um computador real. Assim, ele é útil para ajudar o programador a pensar na solução, mas não pode ser executado por uma máquina. Veja:
+
+
+Python (3.8.1)
+
+Pedir um número inteiro ao usuário;
+
+Ler (a);
+
+Pedir um número inteiro ao usuário;
+
+Ler (b);
+Se (a > = b)
+
+    Imprimir a;
+
+
+◆ Observação:
+
+É muito comum utilizar o operador de atribuição, que em pseudocódigo, normalmente, é simbolizado pela seta (←). No Portugol Studio, que você vai conhecer na sequência, o operador é simbolizado pelo igual (=).
+
+É importante perceber que o operador de atribuição não é uma igualdade. Ele atribui à variável do lado esquerdo o valor que está do lado direito. Ou seja, a linha:
+
+a ← 10 (pseudocódigo) [ou a = 10 (no Portugol Studio)]
+
+atribui o valor 10 à variável a.
+
+É usual escrevermos a instrução
+
+a ← a + 1 (pseudocódigo) [ou a = a + 1 (no Portugol Studio)]
+
+que causa estranheza no primeiro contato, mas simplesmente atribui à variável a o valor que ela tinha antes, acrescido de uma unidade. Ou seja, se as duas linhas acima estivessem em sequência, como a seguir:
+
+a ← 10 (pseudocódigo) [ou a = 10 (no Portugol Studio)]
+
+a ← a + 1 (pseudocódigo) [ou a = a + 1 (no Portugol Studio)]
+
+a variável a teria o valor 11 ao final da execução.
+
+Portugol Studio
+O Portugol Studio é uma ferramenta para aprender programação, voltada para as pessoas que falam o idioma português. A ferramenta tem diversos exemplos e materiais de apoio à aprendizagem, o que facilita a sua jornada como futuro programador.
+
+
+
+O Portugol Studio traz a funcionalidade de simular a execução real de um programa por meio de interações com o usuário, impressão na tela, entre outras.
+
+
+⬛ Como usar o Portugol studio
+
+Veja o passo a passo e aprenda a utilizar o programa.
+
+
+Saiba Mais
+
+Consulte o Exemplo de operações simples com números reais no Portugol Studio.
+
+Procure se familiarizar com o Portugol Studio e veja os primeiros exemplos que já vêm com a ferramenta. Entender bem os conceitos iniciais e poder testar ajudará muito na sua formação como programador.
+
+
+
+1.Conceitos de tipos de dados
+
+⬛ Tipos de dados
+
+Você sabe como podemos representar a solução de um problema da vida real na linguagem de programação? É possível fazer isso por meio de uma sequência finita de passos conhecida como algoritmo.
+
+Um algoritmo pode ser entendido como uma linha de produção fabril semelhante à do Fordismo, uma vez que transformamos os dados de entrada para alcançarmos ou calcularmos determinado valor.
+
+
+◆ Representação do carregamento do código
+
+Veja na imagem ao lado a representação do carregamento do código na linguagem C como uma linha de produção. Os espaços de memória recebem inputs (entradas) para transformá-los em códigos (saídas). Com a execução do código, esses espaços são preenchidos por variáveis que dão origem à linguagem de programação.
+
+Para o cálculo do índice de massa corpórea (IMC) de uma pessoa, medimos sua altura e seu peso. Normalmente, ela é medida em metros e possui valores com casas decimais. Da mesma forma, ele o é em quilogramas, apresentando casas decimais. Suponhamos que essas medidas apresentem os seguintes números apresentados na imagem a seguir.
+
+A representação em casas decimais de números tão comuns do nosso dia a dia também pode ser feita nas linguagens de programação.
+
+Para desenvolver um algoritmo, precisamos:
+
+Identificar quais dados de entrada serão utilizados e como representá-los em nossa linguagem de programação.
+Fazer com esses dados já identificados as transformações necessárias para modificar ou realizar cálculos.
+
+Da mesma forma que, para montar um carro, Ford iniciava o processo com uma carroceria a fim de poder agregar seus demais componentes, como portas, sistema de suspensão e motor, nós o começamos com uma região de memória na qual serão acrescentados os dados necessários para a realização do nosso cálculo.
+
+Desde sua concepção, a linguagem C possui quatro tipos de dados básicos:
+
+char;
+int;
+float;
+double.
+
+Por meio deles e de suas manipulações, é possível representar qualquer tipo de informação do mundo real.
+
+
+◆ Dica
+
+Ainda existe nessa linguagem uma forma de identificar a ausência de valores. Tal situação será vivida quando posteriormente forem tratados os casos de modularização de códigos (funções e procedimentos). Neste caso, é usada a palavra reservada void.
+
+
+◆ Char
+
+O tipo char representa um caractere (podendo ser uma letra, um número ou um símbolo) e ocupa um byte na memória. Em computação, ele é representado pela tabela ASCII (Sigla para American Standard Code for Information Interchange) com seus 256 símbolos. Observe-a a seguir:
+
+ASCII control characters / ASCII printable characters / Extended ASCII characters
+
+Nos 256 símbolos listados, ocorre a seguinte divisão:
+
+Do 0 ao 31
+
+Do 32 ao 127
+
+Do 128 ao 255
+
+
+Compõem a tabela ASCII (algumas vezes, chamada de normal).
+
+Esses caracteres podem ser usados de diversas formas.
+
+◆ Exemplo
+
+A representação dos termos masculino e feminino em um cadastro é feita pelos caracteres M e F. Utilizam-se aspas simples para a sua representação quando ambos forem mostrados em uma implementação. Desse modo, o caractere M de masculino é representado por ‘M’ e o F de feminino, por ‘F’.
+
+Observemos que a tabela ASCII representa os caracteres minúsculos e maiúsculos de forma distinta:
+
+m ≠ M
+
+Assim, conforme pode ser visto, o ‘m’ (m minúsculo) é diferente de ‘M’ (M maiúsculo).
+
+Notemos também que, para cada caractere da tabela, existe um índice representado em decimal ou hexadecimal.
+
+Os quatro tipos de dados básicos utilizados na linguagem c
+
+Confira agora os outros três tipos de dados básicos da linguagem C: int, float e double.
+
+
+⬛ Variáveis e constantes
+Neste vídeo, vamos mergulhar na manipulação de variáveis e constantes em C. Exploraremos os conceitos fundamentais de declaração, atribuição e operações aritméticas em variáveis.
+
+
+◆ Manipulação de variáveis e constantes
+
+Já sabemos como representar os dados do mundo real na linguagem de programação C. Agora precisamos entender como eles podem ser manipulados. Para fazer isso, a linguagem trata os dados como variáveis e constantes.
+
+
+◆ Conceito
+
+A variável é um tipo de espaço de memória que pode ser alterado a qualquer tempo. A constante, por sua vez, não pode. As duas formas permitem a referenciação deles em um espaço de memória. Esses espaços são identificados por meio de rótulos. Chamados de identificadores, eles possibilitam, a partir de seu uso, o acesso ao conteúdo armazenado em memória.
+
+
+◆ Exemplo
+
+Caixas de correio que ficam em frente às residências.
+
+
+◆ Definição das variáveis
+
+Formalmente, um espaço de memória é rotulado por intermédio de um identificador quando as variáveis são definidas. Veja uma ilustração de processo na próxima imagem.
+
+
+Para criar uma variável, utiliza-se a seguinte notação:
+
+O tipo do dado pode ser qualquer um dos quatro tipos já abordados: char, int, float e double.
+
+De acordo com o que vimos, como estaria descrita a representação dos valores de peso e altura? Veja no próximo recurso.
+
+C (GCC 9.2.0)
+
+float peso;
+float altura;
+
+
+Já sabemos que a linguagem C é considerada sensível a um contexto. Assim, ao escrevermos uma aplicação nessa linguagem, os identificadores serão diferentes. Veja um exemplo a seguir:
+
+peso - Peso - PESO
+
+Além disso, o próprio tipo de dado utilizado possui a mesma regra. Desse modo:
+
+Float (todas as letras são minúsculas) = ao tipo de dado, constituindo uma palavra reservada da linguagem.
+
+Quaisquer representações diferentes não correspondem a ele, podendo, dessa forma, ser utilizadas como identificadores, a exemplo de Float ou FLOAT.
+
+
+◆ Recomendação
+
+Não constitui uma boa prática de programação usar identificadores que sejam variantes em minúsculas ou maiúsculas de palavras reservadas. Por exemplo, não é recomendável o uso de identificadores como Float ou FLOAT.
+
+Ainda podemos definir as variáveis com outro formato:
+
+
+C (GCC 9.2.0)
+
+TIPO NOME_DO_IDENTIFICADOR_1, NOME_DO_IDENTIFICADOR_2;
+
+Como estaria descrita, portanto, a representação dos valores de peso e altura? Vamos conferir!
+
+
+C (GCC 9.2.0)
+
+float peso, altura;
+//OU
+float altura, peso;
+
+Também é possível estabelecer uma quantidade maior de variáveis separando-as sempre das demais pelo uso de vírgula, enquanto a última deve conter um ponto e vírgula para finalizar.
+
+
+◆ Atenção
+
+Não é recomendável definir uma quantidade muito grande de variáveis de uma só vez, pois isso dificulta o entendimento do código-fonte da aplicação.
+
+Recomendamos a definição de poucas variáveis por vez. Caso haja algum tipo de relação entre elas, essa identificação deve ser feita por meio de comentários.
+
+Seguindo o exemplo do caso de peso e altura, faríamos assim:
+
+
+C (GCC 9.2.0)
+
+float altura, peso;
+//Valores de altura e peso do usuário,
+//medidos em metros e quilograma,
+//respectivamente.
+
+Outro ponto importante é que uma variável sempre deve ser definida antes de seu uso. Assim, quando formos usar determinada variável, sua definição deverá ocorrer previamente.
+
+Coloquialmente conhecidos como nomes de variáveis, os identificadores podem ter até 32 caracteres formados por:
+
+Letras do alfabeto (maiúsculas e minúsculas);
+Dígitos (0-9);
+Símbolo de underscore _ .
+
+O primeiro caractere deve ser uma letra do alfabeto ou o underscore.
+
+Não usamos caracteres acentuados ao definirmos um identificador.
+
+Saiba Mais
+Pesquise na internet sobre a notação húngara criada por Charles Simonyi.
+
+Além das variáveis, há situações em que é necessário usar valores fixos em toda a aplicação. Conhecidos como constantes, esses valores são definidos por intermédio da palavra reservada “const” antes do tipo de acordo com o seguinte formato:
+
+const TIPO NOME_DO_IDENTIFICADOR;
+
+Nele, o NOME_DO_IDENTIFICADOR segue as mesmas regras relativas ao identificador descritas anteriormente. Por exemplo, é possível definir o valor π usando o seguinte exemplo:
+
+const float pi = 3.141592;
+
+
+⬛ Comando de atribuição de valor
+
+Neste vídeo, vamos explorar os comandos de atribuição de valores a variáveis em C. Aprenderemos como utilizar o operador de atribuição para armazenar e atualizar valores em variáveis. Além disso, discutiremos técnicas avançadas de atribuição, tais como atribuição composta e atribuição condicional.
+
+Ao declarar uma variável, o compilador reserva espaço na memória para o armazenamento de valor.
+
+Como a memória do computador é composta por bytes, formados a partir de bits, a variável pode assumir um valor aleatório, uma vez que não temos controle sobre eles.
+
+A inicialização só ocorre quando se atribui valor por meio de um comando de atribuição. A seguir, vamos ver um pouco mais sobre o uso dessa ferramenta na programação.
+
+Todos os comandos apresentados aqui obedecem à sintaxe (conjunto de regras) da linguagem C e do Portugol. Antes de utilizar o comando de atribuição, você deve inicializar a variável.
+
+Tomemos como exemplo a declaração da variável inteira chamada a. Vejamos como realizar esse procedimento:
+
+C (GCC 9.2.0)
+
+int a;
+
+Na linguagem C e no Portugol, esse comando é representado pelo sinal de igual =, conforme se observa no formato geral da estrutura:
+
+C (GCC 9.2.0)
+
+nome_da_variável = valor_atribuído;
+
+Após a declaração de a, existem duas maneiras de atribuir o valor 10 a essa variável:
+
+C (GCC 9.2.0)
+
+int a;
+a = 10;
+
+C (GCC 9.2.0)
+
+int a = 10;
+
+O nome da variável deve ajudar a entender seu significado.
+
+O uso de iniciais maiúsculas, a partir da segunda palavra, ou do símbolo underscore _ permite a criação de nomes mais complexos, como: idCliente, id_cliente, cpf_usuario, cpfUsuario, entre outros.
+
+Na linguagem C, ainda é possível atribuir o mesmo valor a mais de uma variável. Com a seguinte instrução, é dado o valor 2 às variáveis a e b. Vejamos um exemplo:
+
+C (GCC 9.2.0)
+
+a = b = 2;
+
+Observe que não há como guardar o histórico de valores de uma variável. A atribuição de outro valor faz com que o anterior seja perdido. Para evitar que isso aconteça, deve-se usar outra variável. Na sequência de instruções a seguir, a variável a vale 3, sem que 1 e 2 sejam guardados. Observe:
+
+C (GCC 9.2.0)
+
+int a;
+a = 1;
+a = 2;
+a = 3;
+
+Em pseudocódigo, o comando de atribuição é representado pela seta (←), mas não simboliza a igualdade; ele atribui à variável do lado esquerdo o valor que está à direita. Vejamos alguns exemplos:
+
+Exemplo
+
+a ← 10 (pseudocódigo) ou a = 10 (Portugol e C) atribui o valor 10 à variável a.
+a ← a + 1 (pseudocódigo) ou a = a +1 (Portugol e C) acresce uma unidade à variável a, resultando no valor 11.
+
+O mesmo ocorre na próxima sequência, em que a teria o valor 6 ao final da execução das instruções:
+
+a ← 5 (pseudocódigo) ou a = 5 (Portugol e C).
+a ← a + 1 (pseudocódigo) ou a = a +1 (Portugol e C).
+
+O comando de atribuição pode ser usado para variáveis dos tipos int, double e float da mesma forma que vimos anteriormente. Por outro lado, o tipo char deve ser usado com cautela para que não haja confusão entre o uso de caractere e variável, conforme é mostrado a seguir.
+
+Para declarar uma variável do tipo char chamada escolha, usamos:
+
+C (GCC 9.2.0)
+
+char escolha;
+
+Como é do tipo char, espera-se receber caracteres. Para atribuir b à escolha, utilizaremos as aspas simples a fim de indicar que se trata do caractere b, e não da variável b, sendo o comando correto:
+
+C (GCC 9.2.0)
+
+escolha = ‘b’;
+
+Caso seja feito sem as aspas simples, o programa apontará erro, já que o compilador irá procurar a variável b, não declarada, para atribuir o seu valor à escolha.
+
+
+A linguagem C também permite operações aritméticas com variáveis do tipo char, relacionando o valor dos caracteres armazenados nelas aos inteiros correspondentes na tabela ASCII.
+
+No ASCII, existem apenas 95 caracteres que podem ser impressos. Eles são numerados de 32 a 126, sendo os caracteres de 0 a 31 reservados para funções de controle. Veja alguns caracteres especiais:
+
+
+\ 7 	Bell (sinal sonoro do computador)	\	Caractere \ (forma de representar o próprio caractere especial \ )
+\ a 	Bell (sinal sonoro do computador)	\’ 	Caractere ‘ (aspas simples)
+\ b 	BackSpace 	\” 	Caractere “ (aspas)
+\ n 	New Line (mudança de linha)	\? 	Caractere ? (ponto de interrogação)
+\ r 	Carriage Return 	\000 	Caractere cujo código ASCII em Octal é 000 
+\ t 	Tabulação Horizontal	\xyy 	Caractere cujo código ASCII em Hexadecimal é yy 
+\ v 	Tabulação Vertical	 	 
+Tabela: Caracteres especiais.
+Humberto Henriques de Arruda
+
+O próximo exemplo ilustra essa relação. Veja:
+
+C (GCC 9.2.0)
+
+char escolha;
+escolha = ‘b’;
+escolha = escolha + 1;
+
+Ao final da execução dessas linhas, a variável escolha armazenará o caractere ‘c’.
+
+
+◆ Atribuição de valor a uma variável
+
+Entenda a seguir as principais dúvidas sobre atribuição de valor a uma variável.
+
+Vamos praticar
+
+Você receberá agora uma série de práticas para realizar em seu ambiente de programação. Tente executá-las. Vamos lá!
+
+◆ Prática 1
+
+Vamos descobrir qual é o valor da variável cont após a execução das seguintes linhas:
+
+C (GCC 9.2.0)
+
+1234567891011
+#include <stdio.h>
+int main(){
+
+int cont = 1;
+cont = cont + 1;
+
+printf("A variável cont ao final possui o valor: %d ", cont);
+
+O valor da variável é 2. A variável cont é inicializada com 1, mas a segunda linha acresce uma unidade a esse valor.
+
+◆ Prática 2
+
+Vamos descobrir qual é o valor da variável escolha após a execução das seguintes linhas:
+
+C (GCC 9.2.0)
+
+123456789101112
+#include <stdio.h>
+int main(){
+
+char escolha; 
+escolha = 'D';
+escolha = escolha - 2;
+
+printf("A variável escolha possui o valor: %c ", escolha);
+
+O valor da variável é ‘B’. Por se tratar de um caractere, ao realizar a operação aritmética para diminuir duas unidades da variável escolha, ficará aquele que estiver duas posições antes na tabela ASCII (nesse caso, no alfabeto). Vale lembrar que a linguagem C é case sensitive, ou seja, diferencia letras maiúsculas de minúsculas.
+
+◆ Prática 3
+
+Vamos descobrir qual é o valor da variável c após a execução das seguintes linhas:
+
+C (GCC 9.2.0)
+
+12345678910111213141516
+#include <stdio.h>
+int main(){
+
+int a, b, c, d;
+a = 10;
+b = a + 1;
+c = b + 1;
+d = c + 1;
+a = b = c = d = 20; 
+
+O valor da variável é 20. A última linha atribui valor 20 a todas as variáveis, não importando o valor que tinham previamente.
+
+◆ Prática 4
+
+Vamos descobrir qual é o resultado da execução das seguintes linhas:
+
+C (GCC 9.2.0)
+
+1234567891011
+#include <stdio.h>
+int main(){
+
+char escolha;
+escolha = a;
+escolha = escolha + 1; 
+
+printf("A variável escolha possui o valor: %d ", escolha);
+
+Ocorrerá erro de compilação na segunda linha por não haver variável declarada com o nome a. Lembre-se sempre de não confundir caractere ‘a’ com variável a.
+
+
+⬛ Estruturas de Decisão
+
+No desenvolvimento de aplicações, estruturamos nossos algoritmos para realizar determinadas atividades. Uma destas estruturas é chamada estrutura de decisão. Esta estrutura permite que a aplicação possa ter mais de uma sequência a ser seguida, que será decidida a partir da inferência de um determinado valor. Este valor, na Linguagem C, será do tipo booleano, portanto, os valores poderão ser falsos (quando forem zero ou null) ou verdadeiros (nos demais casos).
+
+Esta estrutura é conhecida como SE-ENTÃO e SE-ENTÃO-SENÃO. No primeiro caso, um determinado segmento de código será executado somente se a expressão lógica, que será inferida, for verdadeira, enquanto no segundo caso a inferência da expressão lógica determinará qual segmento de código será executado.
+
+Graficamente, esta estrutura é representada por um losango, em que cada quina representa:
+
+A decisão corresponde a uma expressão ou variável cujo valor será analisado, conforme já citado.
+
+◆ Exemplo
+
+Expressões que são verdadeiras. Considere em todos os exemplos que a variável a é inteira e tem valor 1:
+
+SE (a)
+SE (a ==1)
+SE (a >; 0)
+
+Na Linguagem C, o SE é representado pela palavra reservada if, assim os itens acima seriam representados nesta linguagem como:
+
+if(a)
+if(a==1)
+if(a >; 0)
+
+É importante relembrar que a Linguagem C é sensível ao contexto, assim deve-se usar if com todos os caracteres minúsculos. Comandos como If, iF e IF não são válidos. Além disso, os parênteses utilizados acima são obrigatórios.
+
+Mais adiante, falaremos sobre quando tivermos uma estrutura destas dentro de outra estrutura, assim chamada de aninhada, e quando duas estruturas estão posicionadas de forma sequencial, denominada de encadeada.
+
+
+⬛ Estrutura de decisão simples
+
+Estrutura de decisão simples é caracterizada pela verificação de uma expressão lógica e, caso ela atenda aos requisitos estipulados, que neste caso será a expressão ser verdadeira, um determinado segmento de código é executado. Caso seja falso, ou seja, valor igual a zero, nulo ou vazio, nenhum segmento de código é executado e o programa continua no comando que sucede ao if.
+
+Graficamente, esta estrutura pode ser apresentada através da figura:
+
+No losango, que representa a estrutura de decisão, temos a expressão lógica. Esta expressão será avaliada. Caso o seu valor seja verdadeiro, um bloco de comandos (segmento de código) é executado logo após a expressão ter sido calculada. Caso contrário, será dada continuidade à execução da aplicação.
+
+Na tabela a seguir, do lado esquerdo é exibido este código representado em PORTUGOL, e do lado direito o mesmo código, usando a Linguagem C.
+
+
+◆ Tabela 1
+
+Na primeira linha é apresentado o início do comando. No Portugol, a expressão SE representa o comando if. A expressão condicional é apresentada obrigatoriamente entre parênteses. É recomendável que não haja espaço entre a palavra reservada if e o parêntese. Todavia é permitido, e até aconselhável, que haja espaço entre a expressão condicional e os parênteses.
+
+
+◆ Tabela 2
+
+Na linha seguinte é apresentada a palavra ENTÃO, que interpretamos como o início do bloco de comandos, que na Linguagem C é representado pelo sinal de abre chaves {.
+
+
+◆ Tabela 3
+
+O bloco de comandos é apresentado na sequência, porém, na Linguagem C, caso haja apenas um comando neste bloco, o uso das chaves torna-se opcional. No caso de existirem duas ou mais instruções, estas chaves se tornam obrigatórias, uma vez que poderia haver confusão com o caso anterior.
+
+
+◆ Exemplo 1
+
+Normalmente, ao preenchermos formulários na web, somos questionados se desejamos receber mais informação a respeito daquele assunto. Como isto poderia ser representado na parte da implementação do código?
+
+
+C (GCC 9.2.0)
+
+
+int Flag_Deseja_Receber_Mais_Informacoes;
+if (Flag_Deseja_Receber_Mais_Informacoes){
+Enviar_Mais_Informacoes();
+}
+
+Nossa expressão condicional é uma variável do tipo inteira: Flag_Deseja_Receber_Mais_Informacoes. Assim, ela recebe valores inteiros.
+
+Já vimos que na Linguagem C é considerado falso se a variável possui valores 0, null ou vazio; e é considerado verdadeiro no caso contrário, ou seja, se é diferente dos valores 0, null e vazio, dado o tipo de dado.
+
+Neste caso, a variável é inteira, então, caso o valor dela seja 0, será considerado falso, caso possua qualquer outro valor (positivo ou negativo), será considerado verdadeiro. Outra expressão condicional equivalente poderia ser colocada neste if, porém, o mais usual é como foi apresentado. Um exemplo equivalente seria Flag_Deseja_Receber_Mais_Informacoes!=0.
+
+
+◆ Exemplo 2
+
+Veremos agora um emprego simples da estrutura de decisão condicional simples, para tal o programa em C abaixo pede a média de um aluno hipotético e decide se o aluno foi aprovado ou não, imprimindo uma mensagem na tela.
+
+C (GCC 9.2.0)
+
+1234567891011121314151617
+
+#include <stdio.h>
+
+int main (void)
+{
+	float nota;
+	printf ("Digite a nota: ");
+	scanf("%f", &nota);
+	printf("%f\n",nota);
+	if (nota >= 5)
+
+Observe que, ao digitar uma nota maior que 5, a estrutura condicional da linha 8 é verdadeira e a mensagem de aprovação é exibida, se for menor que 5, a da linha 10.
+
+Assista ao vídeo abaixo e entenda mais sobre o emprego da estrutura de decisão:
+
+Emprego de Estrutura de Decisão
+
+⬛ Estrutura de decisão composta
+
+Como vimos anteriormente, a estrutura de decisão simples permite que um bloco seja executado caso uma expressão lógica seja verdadeira.
+
+Agora acrescentaremos um novo bloco, que será executado no caso de a condição ser falsa. Assim, estamos nos referindo à estrutura SE-ENTÃO-SENÃO, conforme exibido na imagem a seguir.
+
+A principal diferença deste tipo de estrutura condicional e a anterior reside no bloco marcado em azul na imagem anterior. Neste caso, quando a expressão condicional for avaliada como falsa, o bloco azul será executado.
+
+Dessa forma, quando uma expressão condicional é avaliada, caso o seu valor seja verdadeiro, um bloco de comandos 1 é executado, caso contrário, será executado o bloco de comandos 2.
+
+Após a execução do bloco de comandos selecionado pela expressão, é dada continuidade à execução da aplicação.
+
+Na tabela a seguir, do lado esquerdo é exibido este código representado em PORTUGOL, e do lado direito o mesmo código, usando a Linguagem C. A principal diferença perante o caso anterior está relacionada nas linhas marcadas em amarelo, que representam o quadrado azul do diagrama. Assim, caso a expressão condicional seja falsa, o código que será executado será o presente na estrutura else.
+
+PORTUGOL	LINGUAGEM C
+SE EXPRESSÃO_CONDICIONAL	if(expressao_condicional)
+ENTÃO	{
+BLOCO DE COMANDOS 1	bloco_de_comandos_1;
+FIM_ENTÃO	}
+SENÃO	else
+{
+BLOCO DE COMANDOS 2	bloco_de_comandos_2;
+FIM_SENÃO	}
+FIM_SE
+Elaborada por Anderson Fernandes Pereira dos Santos
+
+◆ Atenção
+
+A mesma regra com relação à quantidade de instruções e às chaves é utilizada neste caso. Portanto, se o bloco possuir apenas um comando, as chaves são opcionais, porém normalmente utilizadas. No caso de haver mais de uma instrução, estas chaves tornam-se obrigatórias.
+
+
+⬛ Estruturas de Repetição
+
+◆ Variável de Controle
+
+Neste vídeo, vamos explorar a estrutura de repetição e as variáveis de controle em C. Aprenderemos como utilizar os laços de repetição, como for, while e do-while, para executar blocos de código de forma iterativa. Além disso, discutiremos o papel das variáveis de controle na iteração eficiente.
+
+Os trechos de algoritmos a seguir processam um conjunto de dados único para obter os resultados desejados.
+
+◆ 1º Exemplo: ler 3 notas de um aluno, calcular e exibir a média aritmética dessas notas.
+
+// Código em Portugol
+funcao inicio ()
+{
+Real nota1, nota2, nota3, media
+escreva (" nota 1 = ")
+leia (nota1)
+escreva (" nota 2 = ")
+leia (nota2)
+escreva (" nota 3 = ")
+leia (nota3)
+media = (nota1+nota2+nota3)/3
+escreva (" media = ",media)
+}
+
+// Código em C (GCC 9.2.0)
+int main ()
+{
+    float nota1, nota2,nota3,media;
+    printf (" nota 1 = ");
+    scanf("%f", &nota1);
+    printf (" nota 2 = ");
+    scanf("%f", &nota2);
+    printf (" nota 3 = ");
+    scanf("%f", &nota3);
+    media=(nota1+nota2+nota3)/3;
+    printf ("media= %f",media);
+}
+
+◆ 2º Exemplo: ler 3 notas de um aluno, calcular e mostrar a média aritmética e exibir se o aluno foi aprovado ou não (média igual ou acima de 7 aprova o aluno).
+
+Observe que a única diferença desta solução e a do exemplo anterior são as duas últimas linhas:
+
+// Código em Portugol
+funcao inicio ()
+{
+Real nota1, nota2, nota3, media
+escreva (" nota 1 = ")
+leia (nota1)
+escreva (" nota 2 = ")
+leia (nota2)
+escreva (" nota 3 = ")
+leia (nota3)
+media = (nota1+nota2+nota3)/3
+escreva (" media = ",media)
+se (media>=7) escreva(" , Aluno Aprovado")
+senao escreva(" , Aluno Reprovado")
+}
+
+// Código em C (GCC 9.2.0)
+#include <stdio.h>
+    
+int main ()
+{
+    float nota1, nota2,nota3,media;
+    printf (" nota 1 = ");
+    scanf("%f", &nota1);
+    printf (" nota 2 = ");
+    scanf("%f", &nota2);
+    printf (" nota 3 = ");
+    scanf("%f", &nota3);
+    media=(nota1+nota2+nota3)/3;
+    printf ("media= %f",media);
+        if (media>=7)
+            printf (" , Aluno Aprovado");
+        else
+            printf (" , Aluno Reprovado");
+    return 0;
+}
+
+Vimos dois exemplos que processam três notas de um único aluno. Mas e se quiséssemos calcular e mostrar a média e a situação de aprovação de 40 alunos de uma turma? Temos duas soluções de acordo com o que sabemos até o momento:
+
+Executar o programa 40 vezes.
+Usar 120 variáveis: 3 variáveis para as notas de cada um dos 40 alunos (3 x 40 = 120).
+
+Você considera viável alguma dessas soluções? E se fossem 100, 300 ou 1.000 alunos?
+
+A sequência de comandos para ler, calcular e mostrar a média e situação de um aluno é igual para 100 ou qualquer outra quantidade de alunos, concorda? Como devemos proceder então?
+
+Os comandos de repetição nos permitem repetir, quantas vezes desejarmos, uma sequência ou bloco de comandos.
+
+⬛ Vetores e Matrizes
+
+◆ Vetor para armazenamento de dados
+
+Armazenamento de dados
+
+Neste vídeo, vamos mergulhar no mundo das variáveis e dos tipos de dados em C. Aprenderemos sobre os tipos de dados simples, como inteiros, caracteres e ponto flutuante, e também sobre os tipos de dados compostos, como structs e arrays.
+
+Variáveis, tipos simples e compostos
+
+Durante a execução de um programa, armazenamos os dados necessários ao processamento em variáveis que residem, temporariamente, na memória do computador.
+
+Geralmente, as linguagens de programação definem:
+
+Tipos de dados simples
+
+Apenas um dado pode ser armazenado por vez.
+
+Tipos de dados estruturados ou compostos, ou estruturas de dados
+
+Capazes de armazenar mais de um valor na mesma variável, usando mais de uma posição de memória para armazenar os dados da estrutura.
+
+Disponível na grande maioria das linguagens de programação, incluindo a C, o vetor é uma das estruturas de dados mais recorrentes, classificadas como homogêneas, uma vez que armazenam dados do mesmo tipo.
+
+Considere um programa que leia 100 números inteiros e positivos, e mostre o maior deles. Analise o trecho do código, em que as linhas estão numeradas para efeitos de explicação:
+
+C (GCC 9.2.0)
+
+int main() {
+    int num,maior,ind;
+    maior = 0;
+    for (ind= 1; ind <=110; ind=ind+1) {
+        scanf ("%d",&num);
+        if (num > maior) {
+            maior=num;
+        }
+    }
+    printf ("O maior dos números lidos e: \n %d", maior);
+    return 0;
+}
+
+Pelo código analisado, podemos chegar às seguintes conclusões:
+
+O uso de variáveis simples resolve esse problema. Podemos usar uma variável do tipo inteiro para armazenar cada número a ser lido e processado, bem como o maior dos números lidos a cada momento (linha 3).
+
+A cada valor lido na variável simples e inteira num (linha 7), o conteúdo anterior é descartado, ficando armazenado o último valor lido. A cada laço da iteração (repetição), comparamos o último valor lido com o conteúdo da variável maior, simples e inteira, devidamente inicializada com 0 (zero) na linha 4. Caso o valor lido seja superior ao contido na variável maior, atribui-se o número lido na variável num à variável maior (linhas 8 e 9).
+
+Quando os 100 números forem lidos e processados e, portanto, houver o término da repetição, teremos o maior dos valores lidos armazenado na variável maior. Bastará exibi-lo no dispositivo de saída (linha 11) para concluir a solução do problema apresentado.
+
+Existem problemas que não podem ser resolvidos usando apenas variáveis do tipo simples. É o que veremos a seguir.
+
+Exemplo
+
+Faça um programa que leia 100 números inteiros e mostre-os na ordem inversa em que foram lidos. Ao lermos o segundo número na mesma variável, o primeiro número lido será perdido. Assim, não teremos como exibi-los posteriormente, tampouco como usar 100 variáveis simples do tipo inteiro, como anteriormente, pois é necessário exibir os dados na ordem inversa daquela em que foram lidos.
+ 
+Temos de armazenar todos os dados para, depois, mostrá-los na ordem desejada, conforme esta sequência com apenas 10 números:
+
+Leitura → 10 56 78 90 12 91 23 42 90 58
+Exibição → 58 90 42 23 91 12 90 78 56 10
+
+Repare que o primeiro número digitado (lido pelo programa) será o último a ser exibido no dispositivo de saída. Para o caso de 10 números, até poderíamos cogitar a ideia de usar 10 variáveis do tipo simples (inteiro), mas, ainda assim, seria oneroso escrever o código. Como são 100 números, fica inviável usarmos 100 variáveis do tipo simples, pois a manipulação de 100 variáveis seria exaustiva. Imagine, então, se o enunciado pedisse a leitura de 1.000 números?
+
+Tipos de dados estruturados ou compostos
+
+Dados do tipo simples (int, float, double char etc.) são armazenados em uma variável que ocupa uma posição de memória.
+
+Aqui, nós nos valemos da lei da Física: “Dois corpos não podem ocupar o mesmo lugar no espaço.” Logo, concluímos que existem diferenças entre tipos de dados simples e estruturados. Observe:
+
+Tipos de dados simples
+
+Podem armazenar apenas um valor por vez. Ao ser lido ou atribuído um novo valor a uma variável simples, seu conteúdo anterior é substituído por ele.
+
+Tipos de dados estruturados ou compostos
+
+Podem armazenar um conjunto de dados, simultaneamente, em memória, e, claro, usam mais de uma posição de memória.
+
+Agregação e alocação dos dados estruturados
+
+A forma como os dados são armazenados varia de estrutura para estrutura e depende de como a linguagem de programação os implementa.
+
+Em geral, as linguagens de programação classificam os dados estruturados da seguinte forma:
+
+Critérios	
+	Forma de alocação
+			Estáticos - Dados declarados e criados no início do programa, e mantidos assim até o final de sua execução: Vetor, Registro, Matriz.
+
+		Dinâmicos	
+
+
+	Tipos de dados
+		Homogênicos
+			Todos os dados são do mesmo tipo
+				Vetores
+				Matrizes
+
+		Heterogêneos
+			Os dados da estrutura podem ser de tipos diferentes.
+				Registros	
+
+⬛ Praticando
+
