@@ -7,15 +7,25 @@
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start; /* Alinha o conteúdo mais no topo */
             align-items: center;
             height: 100vh;
             background-color: #151819;
             color: #FFC0CB;
             font-family: Arial, sans-serif;
+            position: relative;
+            padding-top: 10vh; /* Ajuste para simular a posição */
         }
         .container {
             text-align: center;
+        }
+        h1 {
+            font-size: 3rem; /* Aumentando tamanho do H1 */
+        }
+        h3 {
+            font-size: 2rem; /* Aumentando tamanho do H3 */
+		    color: #a1cca9;
         }
         .button {
             background-color: #95aed7;
@@ -30,9 +40,26 @@
         .button:hover {
             background-color: #7a98c6;
         }
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+        .home-button svg {
+            fill: #95aed7;
+            width: 36px;
+            height: 36px;
+        }
     </style>
 </head>
 <body>
+    <div class="home-button" onclick="location.href='https://crisclei2022.github.io/egenhariadesoftware/'">
+        <svg aria-label="Página inicial" role="img" viewBox="0 0 24 24">
+            <path d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z"></path>
+        </svg>
+    </div>
+
     <div class="container">
         <h1>Engenharia de Software</h1>
         <h3>Pensamento Computancional e Introdução à Programação de Computadores</h3>
