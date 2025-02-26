@@ -1,13 +1,16 @@
 # egenhariadesoftware
-Despesas
+
+--------
+
+# Despesas
 550 Aluguel
 150 Faculdade
 100 Santander
 100 Muvnet
---------
-1000
+=
+# 1000 total
 
-Etapas
+# Etapas
 1o Paga Boleto de 3 mil
 
 2o Recebe Pix de 5 mil
@@ -24,6 +27,7 @@ Etapas
 1000 no bb
 
 ---------------
+# Pagamento
 
 Renda 3800/mes
 
@@ -36,7 +40,7 @@ Entrada (parcelar com a Construtora) 50.000
 
 ---------------
 
-Fluxo 2025
+# Fluxo mes a mes
 
 Jan - 1800
 Fev - 1800 + 2000 + 2000
