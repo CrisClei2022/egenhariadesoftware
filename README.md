@@ -12,6 +12,30 @@ Insira a senha
 Cl6535
 202404405265
 
+INVESTIR
+Entradas
+Salario1 1700.00
+Salario2 2300.00
+Aluguel 1500.00
+Total 5500.00
+
+Saidas
+Aluguel 750.00
+Financiamento1 1000.00
+Toal 1750.00
+
+Saldo 3750.00
+
+MORAR
+Entradas
+Salario1 1700.00
+Salario2 2300.00
+
+Saidas
+Financiamento1 1000.00
+Condominio 450.00
+
+Saldo 2450
 
 
 ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
